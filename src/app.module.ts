@@ -8,6 +8,8 @@ import { routing, appRoutingProviders } from './app.routing';
 import { AUTH_PROVIDERS, provideAuth, JwtHelper} from 'angular2-jwt';
 import { UploadComponent } from './upload/upload.component'
 import { SharedModule } from './shared/shared.module';
+import { ImagesModule } from './images/images.module';
+import { AlbumsModule } from './albums/albums.module';
 
 
 @NgModule({
@@ -15,6 +17,8 @@ import { SharedModule } from './shared/shared.module';
     routing,
     SharedModule,
     BrowserModule,
+    ImagesModule,
+    AlbumsModule,
   ],
   declarations: [
     AppComponent,
