@@ -6,12 +6,15 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { AppComponent } from './app.component';
 import { routing, appRoutingProviders } from './app.routing';
 import { AUTH_PROVIDERS, provideAuth, JwtHelper} from 'angular2-jwt';
-import { UploadComponent } from './upload/upload.component';
+import { UploadComponent } from './upload/upload.component'
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
   imports: [  
-    routing
+    routing,
+    SharedModule,
+    BrowserModule,
   ],
   declarations: [
     AppComponent,

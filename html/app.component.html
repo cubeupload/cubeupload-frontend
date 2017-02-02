@@ -1,24 +1,39 @@
-<div class="container">
-	<header role="navigation">
-		<nav class="header-navbar navbar navbar-default">
-			<a class="navbar-brand" routerLink="/">Cubeupload</a>
-			<ul class="nav navbar-right">
-				<li ><a class="btn btn-default navbar-btn" >Button</a></li>
-				<li class="dropdown" dropdown>
-					<a href="#" class="dropdown-toggle btn btn-default navbar-btn btn-info" dropdownToggle role="button" aria-haspopup="true"
-						aria-expanded="false" id="navigation-dropdown">
-						<span class="hidden-xs">Dropdown</span>
-						<span class="visible-xs"><span class="glyphicon glyphicon-option-horizontal"></span></span>
-						<span class="caret hidden-xs"></span>
-					</a>
-					<ul class="dropdown-menu dropdown-menu-right" dropdownMenu>
-						<li><a routerLink="/about" routerLinkActive="active">About Link</a></li>
-					</ul>
-				</li>
-			</ul>
-		</nav>
-	</header>
-</div>
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">CubeUpload</a>
+
+			<div class="btn-group navbar-btn" dropdown>
+				<button type="button" class="btn btn-success">Upload Image</button>
+				<button type="button" class="btn btn-success dropdown-toggle" dropdownToggle data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<span class="caret"></span>
+				<span class="sr-only">Toggle Dropdown</span>
+			</button>
+				<ul class="dropdown-menu">
+					<li><a href="#">Action</a></li>
+					<li><a href="#">Another action</a></li>
+					<li><a href="#">Something else here</a></li>
+					<li role="separator" class="divider"></li>
+					<li><a href="#">Separated link</a></li>
+				</ul>
+			</div>
+		</div>
+		<ul class="nav navbar-nav navbar-right">
+			<li><a>Images</a></li>
+			<li><a>Albums</a></li>
+			<li class="dropdown" dropdown>
+				<a href="#" class="dropdown-toggle" dropdownToggle role="button" aria-haspopup="true" aria-expanded="false" id="navigation-dropdown">
+					<span class="hidden-xs">Username</span>
+					<span class="visible-xs"><span class="glyphicon glyphicon-option-horizontal"></span></span>
+					<span class="caret hidden-xs"></span>
+				</a>
+				<ul class="dropdown-menu dropdown-menu-right" dropdownMenu>
+					<li><a routerLink="/about" routerLinkActive="active">About Link</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</nav>
 <main role="main" class="main-container">
 	<router-outlet></router-outlet>
 </main>
