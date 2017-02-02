@@ -1,0 +1,24 @@
+<div class="container">
+	<header role="navigation">
+		<nav class="header-navbar navbar navbar-default">
+			<a class="navbar-brand" routerLink="/">Cubeupload</a>
+			<ul class="nav navbar-right">
+				<li ><a class="btn btn-default navbar-btn" >Button</a></li>
+				<li class="dropdown" dropdown>
+					<a href="#" class="dropdown-toggle btn btn-default navbar-btn btn-info" dropdownToggle role="button" aria-haspopup="true"
+						aria-expanded="false" id="navigation-dropdown">
+						<span class="hidden-xs">Dropdown</span>
+						<span class="visible-xs"><span class="glyphicon glyphicon-option-horizontal"></span></span>
+						<span class="caret hidden-xs"></span>
+					</a>
+					<ul class="dropdown-menu dropdown-menu-right" dropdownMenu>
+						<li><a routerLink="/about" routerLinkActive="active">About Link</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</header>
+</div>
+<main role="main" class="main-container">
+	<router-outlet></router-outlet>
+</main>

@@ -1,0 +1,63 @@
+$gray-base:              #000 !default;
+$gray-darker:            lighten($gray-base, 13.5%) !default; // #222
+$gray-dark:              lighten($gray-base, 20%) !default;   // #333
+$gray:                   lighten($gray-base, 33.5%) !default; // #555
+$gray-light:             lighten($gray-base, 46.7%) !default; // #777
+$gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
+
+$brand-primary:         rgb(155, 145, 195);
+$brand-success:         rgb(92, 184, 92);
+$brand-info:            rgb(198, 204, 178);
+$brand-warning:         rgb(240, 173, 78);
+$brand-danger:          rgb(213, 138, 138);
+
+$padding-base-vertical:     10px;
+$padding-base-horizontal:   20px;
+
+$padding-large-vertical:    13px;
+$padding-large-horizontal:  24px;
+
+$padding-small-vertical:    3px;
+$padding-small-horizontal:  10px;
+
+$table-bg-accent:               rgb(247, 248, 240);
+$table-bg-hover:                rgb(247, 248, 240);
+
+
+$table-border-color:            $gray-lighter;
+
+
+$btn-info-color:                 rgb(252, 89, 34);
+$btn-info-bg:                    rgba(255,255,255,0.75);
+$btn-info-border:                rgb(252, 89, 34);
+
+
+$input-bg:                       rgb(240, 242, 232);
+$input-bg-disabled:              $gray-lighter;
+$input-color:                    $gray-darker;
+$input-border:                  rgb(198, 204, 178);
+
+$input-group-addon-bg:           rgb(240, 242, 232);
+$input-group-addon-border-color: $brand-info;
+
+$navbar-height: 68px;
+$navbar-margin-bottom: 20px;
+
+$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+
+@import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+
+.navbar-right {
+    margin-right: 0px !important;
+}
+
+.well-transparent {
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: none;
+}
+
+ul {
+    padding-left: 15px;
+}
