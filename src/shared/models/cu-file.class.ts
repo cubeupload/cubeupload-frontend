@@ -1,15 +1,11 @@
-export interface CUFile {
-    filesize: number,
-    size: string
-}
-
 export class CUFile implements CUFile {
+    filesize: number; 
+    
     constructor(filesize: number) {
-        this.filesize = filesize;
-        this.size = this.formattedFileSize(filesize);
+        this.filesize = filesize; 
     }
 
-    formattedFileSize(filesize: number): string {
-        return `${filesize} MB`; //TODO convert bytes to kb/mb etc
+    filesizeFormatted(): string {
+        return `${this.filesize} MB`; //TODO convert bytes to kb/mb etc
     }
 }
