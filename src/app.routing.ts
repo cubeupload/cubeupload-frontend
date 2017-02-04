@@ -8,8 +8,12 @@ import { AlbumsComponent } from './albums/albums.component';
 const appRoutes : Routes = 
 [
     {
-        path: '**',
-        redirectTo: 'images',
+        path: '',
+        component: UploadComponent
+    },
+    {
+        path: '#',
+        redirectTo: '/',
         pathMatch: 'full'
     }
 ];

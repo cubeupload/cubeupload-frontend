@@ -2,9 +2,7 @@
     <h1>Images</h1>
 
     <div class="row" *ngIf="images">
-        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3" *ngFor="let image of images">
-            <image-bit [image]="image"></image-bit>
-        </div>
+        <image-grid [images]="images"></image-grid>
     </div>
 
 </div>

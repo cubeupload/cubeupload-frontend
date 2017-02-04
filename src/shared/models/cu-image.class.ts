@@ -10,7 +10,7 @@ export class CUImage extends CUObject {
     filesize: CUFile;
     albums: CUAlbum[];
 
-    constructor(id: number, name: string, description: string, user: CUUser, imageUrl: string, filesize: number, albums: CUAlbum[]) {
+    constructor(id: string, name: string, description: string, user: CUUser, imageUrl: string, filesize: number, albums: CUAlbum[]) {
         super(id, name, description, user);
         this.imageUrl = imageUrl,
             this.thumbUrl = this.thumbUrlForImage(imageUrl),

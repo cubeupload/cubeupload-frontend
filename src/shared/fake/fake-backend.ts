@@ -1,9 +1,9 @@
 import { Http, BaseRequestOptions, Response, ResponseOptions, RequestMethod, ResponseType } from '@angular/http';
 import { MockBackend, MockConnection } from '@angular/http/testing';
 import { Injector } from '@angular/core';
-import { Constants } from './constants';
+import { Constants } from './../constants';
 import { FakeData } from './fake-data';
-import { CUImage } from './../shared/models/cu-image.class';
+import { CUImage } from './../../shared/models/cu-image.class';
 
 class MockError extends Response implements Error {
     name: any
@@ -61,9 +61,11 @@ export let fakeBackend = {
                 if (connection.request.url.startsWith(Constants.API_Image_Get) && connection.request.method === RequestMethod.Get) {
                     let url = connection.request.url;
                     let n = url.lastIndexOf('/');
-                    let id = +url.substring(n + 1);
+                    let id = url.substring(n + 1);
                     let images = <CUImage[]>FakeData.Images;
-                    let singleImageArray = images.filter(imageItem => imageItem.id === id)[0];
+                    let singleImageArray = images.filter(imageItem => {
+                        return imageItem.id === id;
+                    })[0];
                     let singleImageForId = singleImageArray ? singleImageArray : null;
                     
                     if (singleImageForId) {

@@ -5,7 +5,7 @@ import { CUUser } from './cu-user.class';
 export class CUAlbum extends CUObject {
     images: CUImage[];
 
-    constructor(id: number, name: string, description: string, user: CUUser, images: CUImage[]) {
+    constructor(id: string, name: string, description: string, user: CUUser, images: CUImage[]) {
         super(id, name, description, user);
         images = images;
     }

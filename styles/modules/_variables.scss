@@ -5,3 +5,8 @@ $body-bg-inverse: $gray-dark;
 $footer-height: 40px;
 
 $packages-basket-height: 150px;
+
+body { 
+    // for use with fixed-top navbar
+    //padding-top: $navbar-height * 1.3;
+ }

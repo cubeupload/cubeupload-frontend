@@ -10,7 +10,7 @@ import { UploadComponent } from './upload/upload.component'
 import { SharedModule } from './shared/shared.module';
 import { ImagesModule } from './images/images.module';
 import { AlbumsModule } from './albums/albums.module';
-import { fakeModuleProvider } from './shared/fake-backend.provider';
+import { fakeModuleProvider } from './shared/fake/fake-backend.provider';
 
 
 @NgModule({

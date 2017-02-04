@@ -1,24 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from './../shared/shared.module';
-import { imagesRouting } from './images.routing';
-import { ImagesComponent } from './images.component';
-import { ImageComponent } from './image.component';
-import { ImagesService } from './images.service';
+import { uploadRouting } from './upload.routing';
 import { SelectAllDirective } from './../shared/directives/select-all.directive';
+import { UploadComponent } from './upload.component';
 
 @NgModule({
   imports: [
     CommonModule,
     SharedModule,
-    imagesRouting
+    uploadRouting
   ],
   declarations: [
-    ImagesComponent,
-    ImageComponent
+    UploadComponent
   ],
   providers: [
-    ImagesService
-    ]
+  ]
 })
 export class ImagesModule { }
