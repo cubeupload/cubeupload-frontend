@@ -146,7 +146,7 @@ $table-border-color:            $gray !default;
 $btn-font-weight:                normal !default;
 
 $btn-default-color:              $text-color !default;
-$btn-default-bg:                 $gray !default;
+$btn-default-bg:                 lighten(saturate($body-bg, 10%), 50%) !default;
 $btn-default-border:             $btn-default-bg !default;
 
 $btn-primary-color:              #fff !default;
@@ -220,7 +220,7 @@ $legend-color:                   $text-color !default;
 $legend-border-color:            transparent !default;
 
 //** Background color for textual input addons
-$input-group-addon-bg:           $gray !default;
+$input-group-addon-bg:           $input-border !default;
 //** Border color for textual input addons
 $input-group-addon-border-color: transparent !default;
 

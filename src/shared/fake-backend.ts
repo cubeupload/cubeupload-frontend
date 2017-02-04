@@ -3,6 +3,7 @@ import { MockBackend, MockConnection } from '@angular/http/testing';
 import { Injector } from '@angular/core';
 import { Constants } from './constants';
 import { FakeData } from './fake-data';
+import { CUImage } from './../shared/models/cu-image.class';
 
 class MockError extends Response implements Error {
     name: any
@@ -55,6 +56,27 @@ export let fakeBackend = {
                     connection.mockRespond(new Response(
                         new ResponseOptions({ status: 200, body: FakeData.Images })
                     ));
+                }
+
+                if (connection.request.url.startsWith(Constants.API_Image_Get) && connection.request.method === RequestMethod.Get) {
+                    let url = connection.request.url;
+                    let n = url.lastIndexOf('/');
+                    let id = +url.substring(n + 1);
+                    let images = <CUImage[]>FakeData.Images;
+                    let singleImageArray = images.filter(imageItem => imageItem.id === id)[0];
+                    let singleImageForId = singleImageArray ? singleImageArray : null;
+                    
+                    if (singleImageForId) {
+                        connection.mockRespond(new Response(
+                            new ResponseOptions({
+                                status: 200, body: singleImageForId
+                            })
+                        ));
+                    } else {
+                        connection.mockError(new MockError(
+                            new ResponseOptions({ status: 400, statusText: `No Image`, body: `Sorry Bro`, type: ResponseType.Error })
+                        ));
+                    }
                 }
 
             }, 50);

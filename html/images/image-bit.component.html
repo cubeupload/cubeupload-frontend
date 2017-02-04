@@ -1,10 +1,17 @@
 <div class="panel panel-default image-bit">
     <div class="panel-heading">{{image.name}}</div>
     <div class="panel-body thumb-container">
+        <a [routerLink]="['/image', image.id]">
         <img class="thumb-container-image" src="{{image.thumbUrl}}" alt="{{image.description}}">
+        </a>
     </div>
     <div class="panel-footer">
-        <p>Share</p>
-        <input readonly selectAll class="form-control" type="text" value="{{image.imageUrl}}">
+        <div class="input-group">
+            <span class="input-group-addon">Share</span>
+            <input readonly selectAll [selectOnMouseEnter]="false" class="form-control" type="text" value="{{image.imageUrl}}">
+            <span class="input-group-addon">
+                <button class="btn btn-primary btn-xs" tabindex="-1" type="button" >Copy</button>
+            </span>
+        </div>
     </div>
 </div>

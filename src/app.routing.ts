@@ -8,16 +8,6 @@ import { AlbumsComponent } from './albums/albums.component';
 const appRoutes : Routes = 
 [
     {
-        path : 'images',
-        component : ImagesComponent,
-        pathMatch: 'full'
-    },
-    {
-        path : 'albums',
-        component : AlbumsComponent,
-        pathMatch: 'full'
-    },
-    {
         path: '**',
         redirectTo: 'images',
         pathMatch: 'full'

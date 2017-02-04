@@ -1,4 +1,16 @@
+@import './../modules/_bootstrap-theme';
+
 .thumb-container-image {
     width: 100%;
     max-width: 100%;
+}
+
+.thumb-container {
+    padding: 0;
+}
+
+.image-bit {
+    .input-group-btn {
+        background-color: $input-bg;
+    }
 }

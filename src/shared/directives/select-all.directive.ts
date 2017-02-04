@@ -1,17 +1,12 @@
-import { Directive, OnInit, ElementRef, Renderer, HostListener } from '@angular/core';
+import { Directive, OnInit, Input, ElementRef, Renderer, HostListener } from '@angular/core';
 
 @Directive({
-    selector: 'input[selectAll]',
-    // host: {
-    //     '(focus)': 'onFocus()',
-    //     '(blur)': '_onBlur()',
-    //     '(click)': 'onClick($event.target)'
-    // }
+    selector: 'input[selectAll][selectOnMouseEnter]'
 })
 export class SelectAllDirective implements OnInit {
-    constructor(private _element: ElementRef, private _renderer: Renderer) {
-        console.log("init directive");
-    }
+    @Input() selectOnMouseEnter: boolean = false;
+
+    constructor(private _element: ElementRef, private _renderer: Renderer) {}
 
     selectElementText(element): void {
         element.focus();
@@ -23,14 +18,16 @@ export class SelectAllDirective implements OnInit {
         this.selectElementText(element);
     }
 
-    @HostListener('mouseup', ['$event.target'])
+    @HostListener('click', ['$event.target'])
     onClick(element) {
         this.selectElementText(element);
     }
 
     @HostListener('mouseenter', ['$event.target']) 
     onMouseEnter(element) {
-        //this.selectElementText(element);
+        if(this.selectOnMouseEnter) {
+            this.selectElementText(element);
+        }
     }
 
     ngOnInit() {

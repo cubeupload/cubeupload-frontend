@@ -1,0 +1,132 @@
+$paddingUnits: 
+-15,-14,-13,-12,-11,-10,-9,-8,-7,-6,-5,-4,-3,-2,
+-1,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,20,25,30,35,40,45,50,
+55,60,65,70,75,80,85,90,95,100;
+
+@each $i in $paddingUnits {
+    .p-t-#{$i} {
+        padding-top: #{$i}px;
+    }
+    .p-b-#{$i} {
+        padding-bottom: #{$i}px;
+    }
+    .p-l-#{$i} {
+        padding-left: #{$i}px;
+    }
+    .p-r-#{$i} {
+        padding-right: #{$i}px;
+    }
+    .p-h-#{$i} {
+        padding-left: #{$i}px;
+        padding-right: #{$i}px;
+    }
+    .p-v-#{$i} {
+        padding-top: #{$i}px;
+        padding-bottom: #{$i}px;
+    }
+    
+    .m-t-#{$i} {
+        margin-top: #{$i}px;
+    }
+    .m-b-#{$i} {
+        margin-bottom: #{$i}px;
+    }
+    .m-l-#{$i} {
+        margin-left: #{$i}px;
+    }
+    .m-r-#{$i} {
+        margin-right: #{$i}px;
+    }
+    .m-h-#{$i} {
+        margin-left: #{$i}px;
+        margin-right: #{$i}px;
+    }
+    .m-v-#{$i} {
+        margin-top: #{$i}px;
+        margin-bottom: #{$i}px;
+    }
+}
+
+@mixin prefix($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: $value;
+  }
+ 
+  // Output standard non-prefixed declaration
+  #{$property}: $value;
+}
+
+.minh-sm {
+    min-height: 50px;
+}
+
+.minh-md {
+    min-height: 75px;
+}
+
+.minh-lg {
+    min-height: 125px;
+}
+
+.maxh-sm {
+    max-height: 50px;
+}
+
+.maxh-md {
+    max-height: 75px;
+}
+
+.maxh-lg {
+    max-height: 125px;
+}
+
+.maxh-viewport {
+    max-height: calc(70vh - 100px);
+}
+
+
+
+.hide {
+    visibility: hidden;
+}
+
+.show {
+    visibility: visible;
+}
+
+.relative {
+    position: relative;
+}
+
+.clearfix {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin linearGradient($top, $bottom){
+    background: $top; /* Old browsers */
+    background: -moz-linear-gradient(top,  $top 0%, $bottom 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  $top 0%,$bottom 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  $top 0%,$bottom 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  $top 0%,$bottom 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  $top 0%,$bottom 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}

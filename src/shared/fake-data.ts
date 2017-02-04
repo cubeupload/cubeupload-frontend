@@ -7,6 +7,7 @@ export class FakeData {
         
         return [
             {
+                id: 0,
                 name: 'Impressionism at its best',
                 description: 'Pretty colurs',
                 user: null,
@@ -15,6 +16,7 @@ export class FakeData {
                 albums: null
             },
             {
+                id: 1,
                 name: 'Play Poster',
                 description: 'Big old elephant innit',
                 user: null,
@@ -23,6 +25,7 @@ export class FakeData {
                 albums: null
             },
             {
+                id: 2,
                 name: 'DefineFor.Me',
                 description: 'Simple Dictionary Website',
                 user: null,
@@ -31,6 +34,25 @@ export class FakeData {
                 albums: null
             },
             {
+                id: 3,
+                name: 'Play Poster',
+                description: 'Big old elephant innit',
+                user: null,
+                imageUrl: 'http://u.cubeupload.com/GabrielMSharp/justso.jpg',
+                filesize: 1000,
+                albums: null
+            },
+            {
+                id: 4,
+                name: 'DefineFor.Me',
+                description: 'Simple Dictionary Website',
+                user: null,
+                imageUrl: 'http://u.cubeupload.com/GabrielMSharp/define1.png',
+                filesize: 1000,
+                albums: null
+            },
+            {
+                id: 5,
                 name: 'Impressionism at its best',
                 description: 'Pretty colurs',
                 user: null,
@@ -39,6 +61,7 @@ export class FakeData {
                 albums: null
             },
             {
+                id: 6,
                 name: 'Play Poster',
                 description: 'Big old elephant innit',
                 user: null,
@@ -47,6 +70,7 @@ export class FakeData {
                 albums: null
             },
             {
+                id: 7,
                 name: 'DefineFor.Me',
                 description: 'Simple Dictionary Website',
                 user: null,
@@ -55,6 +79,7 @@ export class FakeData {
                 albums: null
             },
             {
+                id: 8,
                 name: 'Impressionism at its best',
                 description: 'Pretty colurs',
                 user: null,
@@ -63,6 +88,7 @@ export class FakeData {
                 albums: null
             },
             {
+                id: 9,
                 name: 'Play Poster',
                 description: 'Big old elephant innit',
                 user: null,
@@ -71,6 +97,7 @@ export class FakeData {
                 albums: null
             },
             {
+                id: 10,
                 name: 'DefineFor.Me',
                 description: 'Simple Dictionary Website',
                 user: null,
@@ -79,6 +106,7 @@ export class FakeData {
                 albums: null
             },
             {
+                id: 11,
                 name: 'Impressionism at its best',
                 description: 'Pretty colurs',
                 user: null,
@@ -87,42 +115,11 @@ export class FakeData {
                 albums: null
             },
             {
+                id: 12,
                 name: 'Play Poster',
                 description: 'Big old elephant innit',
                 user: null,
                 imageUrl: 'http://u.cubeupload.com/GabrielMSharp/justso.jpg',
-                filesize: 1000,
-                albums: null
-            },
-            {
-                name: 'DefineFor.Me',
-                description: 'Simple Dictionary Website',
-                user: null,
-                imageUrl: 'http://u.cubeupload.com/GabrielMSharp/define1.png',
-                filesize: 1000,
-                albums: null
-            },
-            {
-                name: 'Impressionism at its best',
-                description: 'Pretty colurs',
-                user: null,
-                imageUrl: 'http://u.cubeupload.com/GabrielMSharp/521e267fa8c01b3281d8.jpg',
-                filesize: 1000,
-                albums: null
-            },
-            {
-                name: 'Play Poster',
-                description: 'Big old elephant innit',
-                user: null,
-                imageUrl: 'http://u.cubeupload.com/GabrielMSharp/justso.jpg',
-                filesize: 1000,
-                albums: null
-            },
-            {
-                name: 'DefineFor.Me',
-                description: 'Simple Dictionary Website',
-                user: null,
-                imageUrl: 'http://u.cubeupload.com/GabrielMSharp/define1.png',
                 filesize: 1000,
                 albums: null
             }

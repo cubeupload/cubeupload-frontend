@@ -12,8 +12,12 @@ export class Constants {
         return `${this.API_Base}/images`;
     }
 
-    public static API_Image_Get(id: number): string {
-        return `${this.API_Base}}/images/${id}`;
+    public static get API_Image_Get(): string {
+        return `${this.API_Base}/image/`;
+    }
+
+    public static API_Image_Get_With_ID(id: number): string {
+        return `${this.API_Image_Get}${id}`;
     }
 
     public static get Image_Thumb_URL_Prepend(): string {

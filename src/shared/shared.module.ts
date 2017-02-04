@@ -18,7 +18,8 @@ import { DropdownModule } from 'ng2-bootstrap';
     BrowserModule,
     FormsModule,
     HttpModule,
-    DropdownModule 
+    RouterModule,
+    DropdownModule
   ],
   declarations: [
   ]
