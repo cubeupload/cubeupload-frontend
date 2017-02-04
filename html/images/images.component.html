@@ -2,13 +2,8 @@
     <h1>Images</h1>
 
     <div class="row" *ngIf="images">
-        <div class="col-sm-3" *ngFor="let image of images">
-            <div class="panel">
-                <div class="panel-heading">{{image.name}}</div>
-                <div class="panel-body">
-                    <img style="max-width: 100%;" src="{{image.imageUrl}}" alt="{{image.description}}">
-                </div>
-            </div>
+        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2" *ngFor="let image of images">
+            <image-bit [image]="image"></image-bit>
         </div>
     </div>
 

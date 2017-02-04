@@ -17,7 +17,7 @@ export class Constants {
     }
 
     public static get Image_Thumb_URL_Prepend(): string {
-        return `/t/`
+        return `t/`
     }
     
 }

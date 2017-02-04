@@ -18,10 +18,10 @@ import { DropdownModule } from 'ng2-bootstrap';
     BrowserModule,
     FormsModule,
     HttpModule,
-    DropdownModule
+    DropdownModule 
   ],
-  declarations: [],
-  providers: []
+  declarations: [
+  ]
 
 })
 export class SharedModule {

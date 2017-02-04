@@ -703,19 +703,19 @@ $list-group-link-heading-color: darken($link-color, 5%) !default;
 //
 //##
 
-$panel-bg:                    $gray-dark !default;
+$panel-bg:                    lighten($body-bg, 10%) !default;
 $panel-body-padding:          15px !default;
 $panel-heading-padding:       10px 15px !default;
 $panel-footer-padding:        $panel-heading-padding !default;
 $panel-border-radius:         $border-radius-base !default;
 
 //** Border color for elements within panels
-$panel-inner-border:          $gray !default;
-$panel-footer-bg:             $gray !default;
+$panel-inner-border:          darken($panel-bg, 3.5%) !default;
+$panel-footer-bg:             $panel-bg !default;
 
 $panel-default-text:          $text-color !default;
-$panel-default-border:        $gray !default;
-$panel-default-heading-bg:    $gray-dark !default;
+$panel-default-border:        $panel-bg !default;
+$panel-default-heading-bg:    $panel-bg !default;
 
 $panel-primary-text:          #fff !default;
 $panel-primary-border:        $brand-primary !default;

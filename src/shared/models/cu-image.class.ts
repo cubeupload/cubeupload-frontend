@@ -13,9 +13,9 @@ export class CUImage extends CUObject {
     constructor(name: string, description: string, user: CUUser, imageUrl: string, filesize: number, albums: CUAlbum[]) {
         super(name, description, user);
         this.imageUrl = imageUrl,
-        this.thumbUrl = this.thumbUrlForImage(imageUrl),
-        this.filesize = this.fileSize(filesize),
-        this.albums = albums
+            this.thumbUrl = this.thumbUrlForImage(imageUrl),
+            this.filesize = this.fileSize(filesize),
+            this.albums = albums
     }
 
     fileSize(filesize: number): CUFile {
@@ -23,6 +23,10 @@ export class CUImage extends CUObject {
     }
 
     thumbUrlForImage(imageUrl: string): string {
+        let n = imageUrl.lastIndexOf('/');
+        let result = imageUrl.substring(n + 1);
+        let thumbPath = Constants.Image_Thumb_URL_Prepend + result;
+        imageUrl = imageUrl.replace(result, thumbPath);
         return imageUrl;
     }
 }
