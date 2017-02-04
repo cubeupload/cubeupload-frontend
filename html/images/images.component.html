@@ -1,5 +1,15 @@
 <div class="container-fluid">
-    <p>Images up in this bodizzle</p>
+    <h1>Images</h1>
 
-    <button class="btn btn-link">Okay</button>
+    <div class="row" *ngIf="images">
+        <div class="col-sm-3" *ngFor="let image of images">
+            <div class="panel">
+                <div class="panel-heading">{{image.name}}</div>
+                <div class="panel-body">
+                    <img style="max-width: 100%;" src="{{image.imageUrl}}" alt="{{image.description}}">
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>

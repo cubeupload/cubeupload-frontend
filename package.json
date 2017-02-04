@@ -16,7 +16,6 @@
   "author": "CubeUpload",
   "license": "UNLICENSED",
   "devDependencies": {
-    "@types/node": "^7.0.4",
     "bootstrap-sass": "^3.3.7",
     "concurrent": "^0.3.2",
     "css-loader": "^0.25.0",

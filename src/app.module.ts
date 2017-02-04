@@ -10,6 +10,7 @@ import { UploadComponent } from './upload/upload.component'
 import { SharedModule } from './shared/shared.module';
 import { ImagesModule } from './images/images.module';
 import { AlbumsModule } from './albums/albums.module';
+import { fakeModuleProvider } from './shared/fake-backend.provider';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { AlbumsModule } from './albums/albums.module';
       tokenGetter: (() => localStorage.getItem('id_token')),
       globalHeaders: [{ 'Content-Type': 'application/json' }],
     }),
+    fakeModuleProvider
   ],
   bootstrap: [
     AppComponent
