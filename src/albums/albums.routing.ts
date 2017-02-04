@@ -11,4 +11,4 @@ const appRoutes : Routes =
 ];
 
 export const appRoutingProviders: any[] = [];
-export const routing: ModuleWithProviders = RouterModule.forChild(appRoutes);
+export const albumsRouting: ModuleWithProviders = RouterModule.forChild(appRoutes);
