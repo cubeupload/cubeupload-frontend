@@ -2,3 +2,10 @@
 @import './modules/_variables';
 @import './modules/_xl-breakpoint';
 @import './modules/_helper';
+@import './modules/_misc';
+
+.upload-jumbotron {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

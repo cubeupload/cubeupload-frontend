@@ -1,0 +1,19 @@
+@import "_bootstrap-theme";
+
+ .navbar-subnav {
+     background: transparent;
+ }
+
+ .fold-height {
+     min-height: 68vh;
+ }
+
+ .page-header {
+     padding-bottom: 5px;
+     border-bottom: 1px solid $gray-lighter;
+ }
+
+ .upload-navbar-button {
+     background: darken($brand-primary, 10%);
+     border-color: darken($brand-primary, 10%);
+ }

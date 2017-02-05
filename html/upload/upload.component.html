@@ -1,7 +1,24 @@
-<div class="container-fluid">
-    <div class="col-sm-6 col-sm-push-3 text-center">
-    <div class="panel panel-default">
-        Upload your mother here
+<div class="jumbotron text-center fold-height upload-jumbotron" *ngIf="!upload">
+    <div>
+        <p><a class="btn btn-primary btn-lg" (click)="uploadImages()" role="button">Select Images</a>
+        <p class="text-muted small">or Drag &amp; Drop <i>anywhere</i></p>
     </div>
 </div>
+<div class="container-fluid" *ngIf="upload">
+    <nav class="navbar navbar-subnav">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav navbar-left">
+                <li><a class="btn btn-success">Select Images</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a>Start Upload</a></li>
+            </ul>
+
+        </div>
+    </nav>
+</div>
+<div class="container-fluid">
+    <p class="text-center page-header">My Images</p>
+    <image-grid [images]="images" *ngIf="images"></image-grid>
 </div>

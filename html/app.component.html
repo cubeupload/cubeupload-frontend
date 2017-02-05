@@ -1,21 +1,18 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
 	<div class="container-fluid">
 		<div class="navbar-header">
 			<a class="navbar-brand" [routerLink]="['']">CubeUpload</a>
 
 			<div class="btn-group navbar-btn pull-left" dropdown>
-				<button type="button" class="btn btn-success">Upload Image</button>
-				<button type="button" class="btn btn-success dropdown-toggle" dropdownToggle data-toggle="dropdown" aria-haspopup="true"
+				<button type="button" class="btn btn-primary upload-navbar-button">Upload Image</button>
+				<button type="button" class="btn btn-primary upload-navbar-button dropdown-toggle" dropdownToggle data-toggle="dropdown" aria-haspopup="true"
 					aria-expanded="false">
 				<span class="caret"></span>
 				<span class="sr-only">Toggle Dropdown</span>
 			</button>
-				<ul class="dropdown-menu">
-					<li><a href="#">Action</a></li>
-					<li><a href="#">Another action</a></li>
-					<li><a href="#">Something else here</a></li>
-					<li role="separator" class="divider"></li>
-					<li><a href="#">Separated link</a></li>
+				<ul class="dropdown-menu arrow">
+					<li><a href="#">Upload to Album</a></li>
+					<li><a href="#">Paste URL</a></li>
 				</ul>
 			</div>
 		</div>
@@ -29,8 +26,11 @@
 					<span class="visible-xs"><span class="glyphicon glyphicon-option-horizontal"></span></span>
 					<span class="caret hidden-xs"></span>
 				</a>
-				<ul class="dropdown-menu dropdown-menu-right" dropdownMenu>
-					<li><a routerLink="/about" routerLinkActive="active">About Link</a></li>
+				<ul class="dropdown-menu arrow arrow-right dropdown-menu-right" dropdownMenu>
+					<li><a routerLink="/about" routerLinkActive="active">Account</a></li>
+					<li><a routerLink="/about" routerLinkActive="active">Settings</a></li>
+					<li role="separator" class="divider"></li>
+					<li><a href="#">Logout</a></li>
 				</ul>
 			</li>
 		</ul>

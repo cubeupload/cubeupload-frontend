@@ -9,11 +9,11 @@ $bootstrap-sass-asset-helper: false !default;
 //## Gray and brand colors for use across Bootstrap.
 
 $gray-base:              #000 !default;
-$gray-darker:            lighten($gray-base, 13.5%) !default; // #222
-$gray-dark:              #303030 !default;   // #333
-$gray:                   #464545 !default;
-$gray-light:             #999 !default;   // #999
-$gray-lighter:           #EBEBEB !default; // #eee
+$gray-darker:            #222 !default;
+$gray-dark:              #191a20 !default; 
+$gray:                   #424355 !default;
+$gray-light:             #5e5f79 !default; 
+$gray-lighter:           #8687ad !default; 
 
 $brand-primary:         #807eba !default;
 $brand-success:         #d2ffa0 !default;
@@ -32,7 +32,7 @@ $body-bg:               #2e2e37 !default;
 $text-color:            #fff !default;
 
 //** Global textual link color.
-$link-color:            desaturate(lighten($brand-success, 10%),10%) !default;
+$link-color:            desaturate(lighten($brand-success, 1%),1%) !default;
 //** Link hover color set via `darken()` function.
 $link-hover-color:      $link-color !default;
 //** Link hover decoration.
@@ -490,7 +490,7 @@ $pager-disabled-color:                 #ddd !default;
 
 $jumbotron-padding:              30px !default;
 $jumbotron-color:                inherit !default;
-$jumbotron-bg:                   $gray-dark !default;
+$jumbotron-bg:                   $body-bg !default;
 $jumbotron-heading-color:        inherit !default;
 $jumbotron-font-size:            ceil(($font-size-base * 1.5)) !default;
 $jumbotron-heading-font-size:    ceil(($font-size-base * 4.5)) !default;
@@ -885,6 +885,38 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
     background-color: transparent;
     border-color: transparent;
     box-shadow: none;
+}
+
+.dropdown-menu {
+    padding: 5px;
+    top: 110%;
+    border-radius: 0;
+
+    li a {
+        line-height: $line-height-base * 1.5;
+    }
+
+    &.arrow:after {
+        bottom: 100%;
+        left: 50%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border-color: rgba(255, 255, 255, 0);
+        border-bottom-color: #fff;
+        border-width: 10px;
+        margin-left: -10px;
+    }
+    &.arrow.arrow-right:after {
+        left: initial;
+        right: 10px;
+    }
+    &.arrow.arrow-left:after {
+        left: 10px;
+    }
 }
 
 ul {
