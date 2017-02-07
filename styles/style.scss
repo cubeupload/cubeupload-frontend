@@ -3,9 +3,6 @@
 @import './modules/_xl-breakpoint';
 @import './modules/_helper';
 @import './modules/_misc';
-
-.upload-jumbotron {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+@import './modules/_buttons';
+@import './modules/_buttons';
+@import './modules/_upload';

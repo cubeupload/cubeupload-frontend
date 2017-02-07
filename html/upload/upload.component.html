@@ -1,24 +1,10 @@
-<div class="jumbotron text-center fold-height upload-jumbotron" *ngIf="!upload">
+<div class="jumbotron text-center upload-jumbotron" [ngClass]="upload ? 'upload-collapse':''">
     <div>
-        <p><a class="btn btn-primary btn-lg" (click)="uploadImages()" role="button">Select Images</a>
+        <p><a class="btn btn-primary btn-lg btn-subtitled" (click)="uploadImages()" role="button">Select Images <span class="btn-subtitle">Images, 5mb each</span></a>
         <p class="text-muted small">or Drag &amp; Drop <i>anywhere</i></p>
     </div>
 </div>
-<div class="container-fluid" *ngIf="upload">
-    <nav class="navbar navbar-subnav">
-        <div class="container-fluid">
-            <ul class="nav navbar-nav navbar-left">
-                <li><a class="btn btn-success">Select Images</a></li>
-            </ul>
-
-            <ul class="nav navbar-nav navbar-right">
-                <li><a>Start Upload</a></li>
-            </ul>
-
-        </div>
-    </nav>
-</div>
-<div class="container-fluid">
+<div class="container-fluid upload-images" [ngClass]="upload ? 'upload-in-progress':''">
     <p class="text-center page-header">My Images</p>
     <image-grid [images]="images" *ngIf="images"></image-grid>
 </div>

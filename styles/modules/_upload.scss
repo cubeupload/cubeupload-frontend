@@ -1,0 +1,32 @@
+@import './../modules/_variables';
+
+.upload-jumbotron {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: $fold-height;
+    padding: 40px 0 0;
+    margin: 0;
+    transition: min-height 0.8s, padding 0.8s;
+    will-change: height, padding;
+    transition-timing-function: cubic-bezier(.21,.45,.23,1.02);
+
+    &.upload-collapse {
+        min-height: 22vh;
+    }
+
+    p + p {
+        margin-bottom: 0;
+    }
+}
+
+.upload-images {
+    opacity: 0.0;
+    transform: scale(0.95);
+    transition: opacity 0.5s, transform 0.5s;
+    &.upload-in-progress {
+        transform: scale(1.0);
+        opacity: 1.0;
+    }
+}

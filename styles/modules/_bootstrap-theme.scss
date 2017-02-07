@@ -877,6 +877,10 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 
+.navbar {
+    height: $navbar-height;
+}
+
 .navbar-right {
     margin-right: 0px !important;
 }

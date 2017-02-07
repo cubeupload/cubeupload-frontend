@@ -1,0 +1,17 @@
+@import "_bootstrap-theme";
+
+.btn-subtitled {
+    padding-top: $padding-large-vertical * 0.6;
+    padding-bottom: $padding-large-vertical * 0.6;
+}
+
+.btn-subtitle {
+    display: block;
+    font-size: $font-size-base * 0.8;
+    color: darken($btn-default-color, 10%);
+}
+
+.upload-navbar-button {
+     background: darken($brand-primary, 10%);
+     border-color: darken($brand-primary, 10%);
+ }
