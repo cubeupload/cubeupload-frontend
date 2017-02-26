@@ -1,9 +1,10 @@
-import { CUImage, CUAlbum, CUUser, CUFile} from './../models/_cu-models.provider';
+import { Observable } from 'rxjs';
+import { CUImage, CUAlbum, CUUser, CUFile } from './../models/_cu-models.provider';
 
 export class FakeData {
 
     public static get Images(): Array<any> {
-        
+
         return [
             {
                 id: "0",
@@ -188,5 +189,4 @@ export class FakeData {
             }
         ];
     }
-
 }

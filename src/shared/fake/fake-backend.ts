@@ -110,7 +110,7 @@ export let fakeBackend = {
                     }
                 }
 
-            }, 50);
+            }, 300);
 
         });
 

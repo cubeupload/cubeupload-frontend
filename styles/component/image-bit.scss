@@ -1,5 +1,13 @@
 @import './../modules/_bootstrap-theme';
 
+.image-bit {
+    position: relative;    
+}
+
+.input-group-btn {
+    background-color: $input-bg;
+}
+
 .thumb-container-image {
     width: 100%;
     max-width: 100%;
@@ -9,8 +17,10 @@
     padding: 0;
 }
 
-.image-bit {
-    .input-group-btn {
-        background-color: $input-bg;
-    }
+progress-bit {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 2px;
 }

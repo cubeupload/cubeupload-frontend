@@ -874,6 +874,7 @@ $hr-border:                   $gray !default;
 
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
+
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 
@@ -926,3 +927,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 ul {
     padding-left: 15px;
 }
+
+.progress {
+     height: 3px !important;
+ }
