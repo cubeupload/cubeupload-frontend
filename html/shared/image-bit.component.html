@@ -1,5 +1,8 @@
 <div class="panel panel-default image-bit">
-    <div class="panel-heading">{{image.name}}</div>
+    <div class="panel-heading">
+        <div>{{image.name}}</div>
+        <div class="small text-muted">{{image.description}}</div>
+    </div>
     <div class="panel-body thumb-container">
         <a [routerLink]="['/image', image.id]">
         <img class="thumb-container-image" src="{{image.thumbUrl}}" alt="{{image.description}}">

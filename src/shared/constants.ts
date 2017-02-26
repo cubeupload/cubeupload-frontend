@@ -23,5 +23,17 @@ export class Constants {
     public static get Image_Thumb_URL_Prepend(): string {
         return `t/`
     }
+
+    public static API_Albums_Get(): string {
+        return `${this.API_Base}/albums`;
+    }
+
+    public static get API_Album_Get(): string {
+        return `${this.API_Base}/album/`;
+    }
+
+    public static API_Album_Get_With_ID(id: number): string {
+        return `${this.API_Album_Get}${id}`;
+    }
     
 }

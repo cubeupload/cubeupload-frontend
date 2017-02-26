@@ -22,8 +22,8 @@
 		</div>
 
 		<ul class="nav navbar-nav navbar-right">
-			<li class="hidden-xs"><a [routerLink]="['images']">Images</a></li>
-			<li class="hidden-xs"><a [routerLink]="['albums']">Albums</a></li>
+			<li class="hidden-xs"><a [routerLink]="['images']">My Images</a></li>
+			<li class="hidden-xs"><a [routerLink]="['albums']">My Albums</a></li>
 			<li class="dropdown" dropdown>
 				<a href="#" class="dropdown-toggle" dropdownToggle role="button" aria-haspopup="true" aria-expanded="false" id="navigation-dropdown">
 					<span class="hidden-xs">Username</span>
@@ -31,10 +31,10 @@
 					<span class="caret hidden-xs"></span>
 				</a>
 				<ul class="dropdown-menu arrow arrow-right dropdown-menu-right" dropdownMenu>
-					<li class="visible-xs"><a [routerLink]="['images']">Images</a></li>
-					<li class="visible-xs"><a [routerLink]="['albums']">Albums</a></li>
-					<li><a routerLink="/about" routerLinkActive="active">Account</a></li>
-					<li><a routerLink="/about" routerLinkActive="active">Settings</a></li>
+					<li class="visible-xs"><a [routerLink]="['images']">My Images</a></li>
+					<li class="visible-xs"><a [routerLink]="['albums']">My Albums</a></li>
+					<li><a routerLink="/account" routerLinkActive="active">Account</a></li>
+					<li><a routerLink="/settings" routerLinkActive="active">Settings</a></li>
 					<li role="separator" class="divider"></li>
 					<li><a href="#">Logout</a></li>
 				</ul>

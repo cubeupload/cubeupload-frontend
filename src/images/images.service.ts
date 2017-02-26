@@ -18,13 +18,10 @@ export class ImagesService {
             .map((images: CUImage[]) => images.map((image: CUImage) => this.constructImage(image)));
     }
 
-
     getImageWithId(id: number): Observable<CUImage> {
         return this._http.get(Constants.API_Image_Get_With_ID(id))
         .map(response => this.constructImage(response.json()));
     }
-
-
 
     private constructImage(imageItem: CUImage): CUImage {
         return imageItem ? new CUImage(

@@ -5,6 +5,8 @@ export class CUObject {
     name: string;
     description: string;
     user: CUUser;
+    createdAt: string;
+    updatedAt: string;
 
     constructor(id: string, name: string, description: string, user: CUUser) {
         this.id = id,

@@ -10,6 +10,7 @@ import { UploadComponent } from './upload/upload.component'
 import { SharedModule } from './shared/shared.module';
 import { ImagesModule } from './images/images.module';
 import { AlbumsModule } from './albums/albums.module';
+import { AccountModule } from './account/account.module';
 import { fakeModuleProvider } from './shared/fake/fake-backend.provider';
 
 
@@ -20,6 +21,7 @@ import { fakeModuleProvider } from './shared/fake/fake-backend.provider';
     BrowserModule,
     ImagesModule,
     AlbumsModule,
+    AccountModule,
   ],
   declarations: [
     AppComponent,

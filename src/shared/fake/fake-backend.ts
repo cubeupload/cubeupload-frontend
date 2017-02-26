@@ -4,6 +4,7 @@ import { Injector } from '@angular/core';
 import { Constants } from './../constants';
 import { FakeData } from './fake-data';
 import { CUImage } from './../../shared/models/cu-image.class';
+import { CUAlbum } from './../../shared/models/cu-album.class';
 
 class MockError extends Response implements Error {
     name: any
@@ -77,6 +78,35 @@ export let fakeBackend = {
                     } else {
                         connection.mockError(new MockError(
                             new ResponseOptions({ status: 400, statusText: `No Image`, body: `Sorry Bro`, type: ResponseType.Error })
+                        ));
+                    }
+                }
+
+                if (connection.request.url.endsWith(Constants.API_Albums_Get()) && connection.request.method === RequestMethod.Get) {
+                    connection.mockRespond(new Response(
+                        new ResponseOptions({ status: 200, body: FakeData.Albums })
+                    ));
+                }
+
+                if (connection.request.url.startsWith(Constants.API_Album_Get) && connection.request.method === RequestMethod.Get) {
+                    let url = connection.request.url;
+                    let n = url.lastIndexOf('/');
+                    let id = url.substring(n + 1);
+                    let albums = <CUAlbum[]>FakeData.Albums;
+                    let singleAlbumArray = albums.filter(albumItem => {
+                        return albumItem.id === id;
+                    })[0];
+                    let singleAlbumForId = singleAlbumArray ? singleAlbumArray : null;
+                    
+                    if (singleAlbumForId) {
+                        connection.mockRespond(new Response(
+                            new ResponseOptions({
+                                status: 200, body: singleAlbumForId
+                            })
+                        ));
+                    } else {
+                        connection.mockError(new MockError(
+                            new ResponseOptions({ status: 400, statusText: `No Album`, body: `Sorry Bro`, type: ResponseType.Error })
                         ));
                     }
                 }

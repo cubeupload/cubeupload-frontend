@@ -20,13 +20,3 @@
         margin-bottom: 0;
     }
 }
-
-.upload-images {
-    opacity: 0.0;
-    transform: scale(0.95);
-    transition: opacity 0.5s, transform 0.5s;
-    &.upload-in-progress {
-        transform: scale(1.0);
-        opacity: 1.0;
-    }
-}

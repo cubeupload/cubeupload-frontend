@@ -1,4 +1,4 @@
-import { Directive, OnInit, Input, ElementRef, Renderer, HostListener } from '@angular/core';
+import { Directive, OnInit, Input, ElementRef, HostListener } from '@angular/core';
 
 @Directive({
     selector: 'input[selectAll][selectOnMouseEnter]'
@@ -6,7 +6,7 @@ import { Directive, OnInit, Input, ElementRef, Renderer, HostListener } from '@a
 export class SelectAllDirective implements OnInit {
     @Input() selectOnMouseEnter: boolean = false;
 
-    constructor(private _element: ElementRef, private _renderer: Renderer) {}
+    constructor(private _element: ElementRef) {}
 
     selectElementText(element): void {
         element.focus();
