@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AlbumsService, CUAlbum, CUImage } from './albums.service';
+import { AlbumsService } from './albums.service';
+import { CUImage, CUAlbum, CUUser, CUFile } from './../shared/models/_cu-models.provider';
 
 @Component({
   selector: 'albums',
@@ -12,9 +13,9 @@ export class AlbumsComponent implements OnInit {
 
   ngOnInit() {
     this._albumsService.getAlbums()
-            .subscribe(response => {
-                return this.albums = response;
-            });
+      .subscribe(response => {
+        return this.albums = response;
+      });
   }
 
 }

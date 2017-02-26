@@ -7,20 +7,27 @@ import { CUUser } from './cu-user.class';
 export class CUImage extends CUObject {
     imageUrl: string;
     thumbUrl: string;
-    filesize: CUFile;
+    filesize: number;
     albums: CUAlbum[];
 
-    constructor(id: string, name: string, description: string, user: CUUser, imageUrl: string, filesize: number, albums: CUAlbum[]) {
-        super(id, name, description, user);
+    constructor(
+        id: string,
+        name: string,
+        description: string,
+        user: CUUser,
+        imageUrl: string,
+        filesize: number,
+        albums: CUAlbum[],
+        createdAt: string,
+        updatedAt: string
+    ) {
+        super(id, name, description, user, createdAt, updatedAt);
         this.imageUrl = imageUrl,
-            this.thumbUrl = this.thumbUrlForImage(imageUrl),
-            this.filesize = this.fileSize(filesize),
-            this.albums = albums
+        this.thumbUrl = this.thumbUrlForImage(imageUrl),
+        this.filesize = filesize,
+        this.albums = albums
     }
 
-    fileSize(filesize: number): CUFile {
-        return new CUFile(filesize);
-    }
 
     thumbUrlForImage(imageUrl: string): string {
         let n = imageUrl.lastIndexOf('/');

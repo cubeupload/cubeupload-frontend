@@ -35,5 +35,9 @@ export class Constants {
     public static API_Album_Get_With_ID(id: number): string {
         return `${this.API_Album_Get}${id}`;
     }
+
+    public static get Album_Thumb_URL_Prepend(): string {
+        return `t/`
+    }
     
 }

@@ -28,7 +28,9 @@ export class ImagesService {
             imageItem.user,
             imageItem.imageUrl,
             123,
-            imageItem.albums
+            imageItem.albums,
+            imageItem.createdAt,
+            imageItem.updatedAt
         ) : null
     }
 

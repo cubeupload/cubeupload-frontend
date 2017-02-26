@@ -17,7 +17,9 @@ export class AlbumsService {
 
     getAlbumWithId(id: number): Observable<CUAlbum> {
         return this._http.get(Constants.API_Album_Get_With_ID(id))
-        .map(response => this.constructAlbum(response.json()));
+        .map(response => {
+            return this.constructAlbum(response.json())
+        });
     }
 
     private constructAlbum(albumItem: CUAlbum): CUAlbum {
@@ -26,7 +28,11 @@ export class AlbumsService {
             albumItem.name,
             albumItem.description,
             albumItem.user,
-            albumItem.images
+            albumItem.images,
+            albumItem.albumUrl,
+            albumItem.thumbUrl,
+            albumItem.createdAt,
+            albumItem.updatedAt
         ) : null
     }
 

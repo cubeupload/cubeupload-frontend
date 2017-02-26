@@ -1,0 +1,10 @@
+<div class="container text-center" *ngIf="album">
+    <p class="text-center page-header">{{album.name}}</p>
+    <p class="text-center text-muted small">{{album.description}}</p>
+    <p class="text-center text-muted small">{{album.images.length || 0}} {{album.images.length==1?'Image':'Images'}}</p>
+
+    <div class="row" *ngIf="album.images">
+        <gallery [images]="album.images"></gallery>
+    </div>
+
+</div>

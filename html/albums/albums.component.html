@@ -1,4 +1,8 @@
 <div class="container-fluid">
-    <p>albums up in this whodunit</p>
-    Albums: {{albums}}
+    <p class="text-center page-header">My Albums</p>
+
+    <div class="row" *ngIf="albums">
+        <album-grid [albums]="albums"></album-grid>
+    </div>
+
 </div>

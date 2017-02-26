@@ -1,0 +1,21 @@
+<div class="panel panel-default album-bit">
+    <div class="panel-heading">
+        <div>{{album.name}}</div>
+        <div class="small text-muted">{{album.description}}</div>
+        <div class="small text-muted">{{album.images.length || 0}} {{album.images.length==1?'Image':'Images'}}</div>
+    </div>
+    <div class="panel-body thumb-container">
+        <a [routerLink]="['/album', album.id]">
+        <img class="thumb-container-image" src="{{album.thumbUrl}}" alt="{{album.description}}">
+        </a>
+    </div>
+    <div class="panel-footer">
+        <div class="input-group">
+            <span class="input-group-addon">Share</span>
+            <input readonly selectAll [selectOnMouseEnter]="false" class="form-control" type="text" value="{{album.albumUrl}}">
+            <span class="input-group-addon">
+                <button class="btn btn-primary btn-xs" tabindex="-1" type="button" >Copy</button>
+            </span>
+        </div>
+    </div>
+</div>
