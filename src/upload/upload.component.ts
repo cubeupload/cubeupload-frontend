@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CUImage } from './../shared/models/cu-image.class';
 import { ImagesService } from './../images/images.service';
+import { CUImage} from './../shared/models/_cu-models.provider';
 
 @Component({
     selector: 'upload',

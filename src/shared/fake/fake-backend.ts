@@ -3,8 +3,7 @@ import { MockBackend, MockConnection } from '@angular/http/testing';
 import { Injector } from '@angular/core';
 import { Constants } from './../constants';
 import { FakeData } from './fake-data';
-import { CUImage } from './../../shared/models/cu-image.class';
-import { CUAlbum } from './../../shared/models/cu-album.class';
+import { CUImage, CUAlbum} from './../../shared/models/_cu-models.provider';
 
 class MockError extends Response implements Error {
     name: any

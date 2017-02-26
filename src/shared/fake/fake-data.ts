@@ -1,6 +1,4 @@
-import { CUImage } from './../models/cu-image.class';
-import { CUAlbum } from './../models/cu-album.class';
-import { CUFile } from './../models/cu-file.class';
+import { CUImage, CUAlbum, CUUser, CUFile} from './../models/_cu-models.provider';
 
 export class FakeData {
 
@@ -170,6 +168,17 @@ export class FakeData {
                 id: "1",
                 name: 'Nudes dont look plz',
                 description: 'mybutt and other nice memories',
+                user: null,
+                createdAt: '2017-01-05 09:00:00',
+                updatedAt: '2017-01-05 09:00:00',
+                images: [
+                    this.Images
+                ]
+            },
+            {
+                id: "2",
+                name: 'Gaming Screenshots',
+                description: 'first accurate fake album yet',
                 user: null,
                 createdAt: '2017-01-05 09:00:00',
                 updatedAt: '2017-01-05 09:00:00',

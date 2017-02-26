@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ImagesService } from './images.service';
-import { CUImage } from './../shared/models/cu-image.class';
+import { CUImage} from './../shared/models/_cu-models.provider';
 
 @Component({
     selector: 'images',

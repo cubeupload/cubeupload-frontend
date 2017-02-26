@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { CUImage } from './../models/cu-image.class';
+import { CUImage} from '../../shared/models/_cu-models.provider';
 
 @Component({
     selector: 'image-grid',
