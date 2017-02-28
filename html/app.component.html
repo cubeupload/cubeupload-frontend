@@ -4,7 +4,10 @@
 			<a class="navbar-brand" [routerLink]="['']">CubeUpload</a>
 
 			<div class="btn-group navbar-btn pull-left" dropdown>
-				<button type="button" class="btn btn-primary upload-navbar-button">Upload Image</button>
+				<label class="btn btn-primary upload-navbar-button" for="upload">
+				<input type="file" id="upload" style="display:none">
+				Upload Image
+				</label>
 				<button type="button" class="btn btn-primary upload-navbar-button dropdown-toggle" dropdownToggle data-toggle="dropdown" aria-haspopup="true"
 					aria-expanded="false">
 				<span class="caret"></span>

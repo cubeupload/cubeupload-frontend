@@ -9,13 +9,10 @@
             <img class="thumb-container-image" src="{{image.thumbUrl}}" alt="{{image.description}}">
         </a>
     </div>
-    <div class="panel-footer">
-        <div class="input-group">
-            <span class="input-group-addon">Share</span>
-            <input readonly selectAll [selectOnMouseEnter]="false" class="form-control" type="text" value="{{image.imageUrl}}">
-            <span class="input-group-addon">
-                <button class="btn btn-primary btn-xs" tabindex="-1" type="button" >Copy</button>
-            </span>
-        </div>
+    <div class="panel-footer" *ngIf="image?.imageUrl">
+
+        <!--TODO Repeat through sharing options to generate links!-->
+
+        <quick-share [url]="image.imageUrl" [sharingOption]="quickShare"></quick-share>
     </div>
 </div>

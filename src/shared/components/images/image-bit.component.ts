@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CUImage } from '../../../shared/models/_cu-models.provider';
 import { SelectAllDirective } from './../../directives/select-all.directive';
 
+import { SharingOption, SharingOptionContext, QuickShare, FullShare } from '../../../shared/components/sharing/sharing-options/_sharing-options';
 import { FakeService } from '../../../shared/fake/fake.service';
 
 @Component({
@@ -15,13 +16,15 @@ export class ImageBitComponent implements OnInit {
     @Output() uploadProgress: EventEmitter<number> = new EventEmitter<number>();
     progress: number;
     progressComplete: boolean = false;
+    quickShare: SharingOption;
 
-    constructor(private _fakeService: FakeService) { }
+    constructor(private _fakeService: FakeService) { 
+        this.quickShare = new QuickShare(); //TODO Make User.getSharingOptions => array
+    }
 
     ngOnInit() {
         this._fakeService.fakeUploadProgress(50)
             .do(progress => {
-                console.log(progress);
                 if(this.progress === 100) {
                     this.progressComplete = true;
                 }

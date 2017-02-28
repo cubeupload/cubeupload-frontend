@@ -12,6 +12,7 @@ import { AlbumBitComponent } from './components/albums/album-bit.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { GalleryImageComponent } from './components/gallery/gallery-image.component';
 import { ProgressBitComponent } from './components/misc/progress-bit.component';
+import { QuickShareComponent } from './components/sharing/quick-share.component';
 
 import { SelectAllDirective } from './../shared/directives/select-all.directive';
 
@@ -27,11 +28,17 @@ import { SelectAllDirective } from './../shared/directives/select-all.directive'
   declarations: [
     ImageGridComponent,
     ImageBitComponent,
+
     AlbumGridComponent,
     AlbumBitComponent,
+
     GalleryComponent,
     GalleryImageComponent,
+
     ProgressBitComponent,
+
+    QuickShareComponent,
+
     SelectAllDirective
   ],
   exports: [
@@ -40,13 +47,20 @@ import { SelectAllDirective } from './../shared/directives/select-all.directive'
     HttpModule,
     RouterModule,
     DropdownModule,
+
     ImageGridComponent,
     ImageBitComponent,
+
     AlbumGridComponent,
     AlbumBitComponent,
+
     GalleryComponent,
     GalleryImageComponent,
+
     ProgressBitComponent,
+
+    QuickShareComponent,
+
     SelectAllDirective
   ]
 
