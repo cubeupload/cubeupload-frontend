@@ -2,7 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CUImage } from '../../../shared/models/_cu-models.provider';
 import { SelectAllDirective } from './../../directives/select-all.directive';
 
-import { SharingOption, SharingOptionContext, QuickShare, FullShare } from '../../../shared/components/sharing/sharing-options/_sharing-options';
+import { SharingOption, SharingOptionContext, QuickShare, FullShare } from '../../../shared/services/share/_sharing-options';
 import { FakeService } from '../../../shared/fake/fake.service';
 
 @Component({

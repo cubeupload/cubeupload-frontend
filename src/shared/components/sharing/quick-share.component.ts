@@ -1,4 +1,4 @@
-import { SharingOption, SharingOptionContext, QuickShare, FullShare } from './sharing-options/_sharing-options';
+import { SharingOption, SharingOptionContext, QuickShare, FullShare } from './../../services/share/_sharing-options';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({

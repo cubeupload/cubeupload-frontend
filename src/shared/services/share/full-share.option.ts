@@ -1,7 +1,6 @@
 import { SharingOption } from './_sharing-options';
 
 export class FullShare implements SharingOption {
-    
     lol(url: string): string {
         return `http://cubeupload.com/image-page/${url}/?fullscreen=true`;
     }
