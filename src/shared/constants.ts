@@ -39,5 +39,9 @@ export class Constants {
     public static get Album_Thumb_URL_Prepend(): string {
         return `t/`
     }
+
+    public static API_Preferences_Get(): string {
+        return `${this.API_Base}/preferences`;
+    }
     
 }

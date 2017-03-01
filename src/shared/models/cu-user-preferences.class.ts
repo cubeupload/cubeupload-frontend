@@ -1,11 +1,16 @@
-export class CUUserPreferences {
-    uploadShowPreviews: boolean;
-    otherPreference: boolean;
-    somethingElse: boolean;
+import { SharingOption } from '../../shared/services/share/_sharing-options';
 
-    constructor(prefs: CUUserPreferences) {
-        this.uploadShowPreviews = prefs.uploadShowPreviews,
-        this.otherPreference = prefs.otherPreference,
-        this.somethingElse = prefs.somethingElse
+export class CUUserPreferences {
+    sharingOptions: CUSharingOption[];
+
+    constructor(sharingOptions: CUSharingOption[]) {
+        this.sharingOptions = sharingOptions;
     }
+}
+
+export interface CUSharingOption {
+    name: string;
+    description: string;
+    strategy: SharingOption;
+    order: number;
 }

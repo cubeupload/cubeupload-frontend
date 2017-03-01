@@ -10,9 +10,6 @@
         </a>
     </div>
     <div class="panel-footer" *ngIf="image?.imageUrl">
-
-        <!--TODO Repeat through sharing options to generate links!-->
-
-        <quick-share [url]="image.imageUrl" [sharingOption]="quickShare"></quick-share>
+        <quick-share *ngFor="let sharingOption of sharingOptions" [url]="image.imageUrl" [sharingOption]="sharingOption"></quick-share>
     </div>
 </div>

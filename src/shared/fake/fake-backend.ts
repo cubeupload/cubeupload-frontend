@@ -4,6 +4,9 @@ import { Injector } from '@angular/core';
 import { Constants } from './../constants';
 import { FakeData } from './fake-data';
 import { CUImage, CUAlbum} from './../../shared/models/_cu-models.provider';
+import { CUUserPreferences, CUSharingOption } from './../../shared/models/cu-user-preferences.class';
+import { QuickShare } from '../../shared/services/share/quick-share.option';
+import { FullShare } from '../../shared/services/share/full-share.option';
 
 class MockError extends Response implements Error {
     name: any
@@ -108,6 +111,12 @@ export let fakeBackend = {
                             new ResponseOptions({ status: 400, statusText: `No Album`, body: `Sorry Bro`, type: ResponseType.Error })
                         ));
                     }
+                }
+
+                if (connection.request.url.endsWith(Constants.API_Preferences_Get()) && connection.request.method === RequestMethod.Get) {
+                    connection.mockRespond(new Response(
+                        new ResponseOptions({ status: 200, body: FakeData.Preferences })
+                    ));
                 }
 
             }, 300);

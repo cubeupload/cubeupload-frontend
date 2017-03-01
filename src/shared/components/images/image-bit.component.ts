@@ -3,7 +3,10 @@ import { CUImage } from '../../../shared/models/_cu-models.provider';
 import { SelectAllDirective } from './../../directives/select-all.directive';
 
 import { SharingOption, SharingOptionContext, QuickShare, FullShare } from '../../../shared/services/share/_sharing-options';
+import { CUUserPreferences, CUSharingOption } from '../../../shared/models/cu-user-preferences.class';
 import { FakeService } from '../../../shared/fake/fake.service';
+import { PrefsService } from '../../../shared/services/prefs.service';
+
 
 @Component({
     selector: 'image-bit',
@@ -16,22 +19,31 @@ export class ImageBitComponent implements OnInit {
     @Output() uploadProgress: EventEmitter<number> = new EventEmitter<number>();
     progress: number;
     progressComplete: boolean = false;
-    quickShare: SharingOption;
+    sharingOptions: CUSharingOption[];
 
-    constructor(private _fakeService: FakeService) { 
-        this.quickShare = new QuickShare(); //TODO Make User.getSharingOptions => array
-    }
+    constructor(private _fakeService: FakeService, private _prefs: PrefsService) { }
 
     ngOnInit() {
+        this.simFakeProgress();
+        this.getSharingOptions();
+    }
+
+    getSharingOptions(): void {
+        this._prefs.getPreferences()
+            .subscribe(response => {
+                return this.sharingOptions = response.sharingOptions
+            });
+    }
+
+    simFakeProgress(): void {
         this._fakeService.fakeUploadProgress(50)
             .do(progress => {
-                if(this.progress === 100) {
+                if (this.progress === 100) {
                     this.progressComplete = true;
                 }
             })
             .subscribe(progress => {
                 return this.progress = progress;
             });
-        this.uploadProgress
     }
 }

@@ -4,6 +4,7 @@ import { FullShare } from './full-share.option';
 export { QuickShare, FullShare }
 
 export interface SharingOption {
+    uniqueId: number;
     getLink(url: string): string;
 }
 

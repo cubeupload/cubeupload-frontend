@@ -1,5 +1,8 @@
 import { Observable } from 'rxjs';
 import { CUImage, CUAlbum, CUUser, CUFile } from './../models/_cu-models.provider';
+import { CUUserPreferences, CUSharingOption } from './../../shared/models/cu-user-preferences.class';
+import { QuickShare } from '../../shared/services/share/quick-share.option';
+import { FullShare } from '../../shared/services/share/full-share.option';
 
 export class FakeData {
 
@@ -188,5 +191,24 @@ export class FakeData {
                 updatedAt: '2017-01-05 09:00:00',
             }
         ];
+    }
+
+    public static get Preferences(): CUUserPreferences {
+        let prefs: CUUserPreferences = {
+            sharingOptions: [
+                {
+                    name: 'Direct',
+                    description: 'A link directly to the image',
+                    strategy: new QuickShare(),
+                    order: 0
+                }, {
+                    name: 'Share',
+                    description: 'A link to the image in a page with the title and description',
+                    strategy: new FullShare(),
+                    order: 1
+                }
+            ]
+        }
+        return prefs;
     }
 }

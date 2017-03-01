@@ -1,5 +1,6 @@
 import { SharingOption, SharingOptionContext, QuickShare, FullShare } from './../../services/share/_sharing-options';
 import { Component, OnInit, Input } from '@angular/core';
+import { CUUserPreferences, CUSharingOption } from '../../../shared/models/cu-user-preferences.class';
 
 @Component({
     selector: 'quick-share',
@@ -7,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class QuickShareComponent implements OnInit {
     @Input() url: string;
-    @Input() sharingOption: SharingOption;
+    @Input() sharingOption: CUSharingOption;
     link: string;
 
     constructor() { }
@@ -17,7 +18,7 @@ export class QuickShareComponent implements OnInit {
     }
 
     getLink(): void {
-        var context: SharingOptionContext = new SharingOptionContext(this.sharingOption);
+        var context: SharingOptionContext = new SharingOptionContext(this.sharingOption.strategy);
         this.link = context.getLink('lolhi ');
     }
 }
