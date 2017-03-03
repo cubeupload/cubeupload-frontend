@@ -1,16 +1,9 @@
-import { SharingOption } from '../../shared/services/share/_sharing-options';
+import { SharingOption } from './sharing/_sharing-options';
 
 export class CUUserPreferences {
-    sharingOptions: CUSharingOption[];
+    sharingOptions: SharingOption[];
 
-    constructor(sharingOptions: CUSharingOption[]) {
+    constructor(sharingOptions: SharingOption[]) {
         this.sharingOptions = sharingOptions;
     }
-}
-
-export interface CUSharingOption {
-    name: string;
-    description: string;
-    strategy: SharingOption;
-    order: number;
 }

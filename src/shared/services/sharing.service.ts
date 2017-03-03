@@ -1,4 +1,4 @@
-import { SharingOption, SharingOptionContext } from './_sharing-options';
+import { SharingOption, SharingOptionInterface } from './../models/sharing/_sharing-options'
 import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
