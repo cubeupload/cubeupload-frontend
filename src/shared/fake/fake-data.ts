@@ -1,7 +1,9 @@
 import { Observable } from 'rxjs';
-import { CUImage, CUAlbum, CUUser, CUFile, CUUserPreferences, CUSharingOption, CUUserPreferencesInterface } from './../../shared/models/_cu-models.provider';
-import { QuickShare } from '../../shared/services/share/quick-share.option';
-import { FullShare } from '../../shared/services/share/full-share.option';
+import { CUImage, CUAlbum, CUUser, CUFile } from './../models/_cu-models.provider';
+import { SharingOption } from './../models/sharing/_sharing-options';
+import { CUUserPreferences } from './../../shared/models/cu-user-preferences.class';
+import { QuickShare } from '../../shared/models/sharing/quick-share.option';
+import { FullShare } from '../../shared/models/sharing/full-share.option';
 
 export class FakeData {
 
@@ -192,19 +194,22 @@ export class FakeData {
         ];
     }
 
-    public static get Preferences(): CUUserPreferencesInterface {
-        let prefs: CUUserPreferencesInterface = {
+    public static get Preferences(): {} {
+        let prefs = {
             sharingOptions: [
                 {
-                    name: 'Direct',
-                    description: 'A link directly to the image',
-                    strategy: new QuickShare(),
-                    order: 0
-                }, {
                     name: 'Share',
-                    description: 'A link to the image in a page with the title and description',
-                    strategy: new FullShare(),
-                    order: 1
+                    description: 'Image on a webpage',
+                    enabled: true,
+                    order: 0,
+                    strategyId: '1002',
+                },
+                {
+                    name: 'Direct',
+                    description: 'Direct link to the image.',
+                    enabled: true,
+                    order: 1,
+                    strategyId: '1001',
                 }
             ]
         }

@@ -1,11 +1,11 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { CUImage, CUUserPreferences, CUSharingOption } from '../../../shared/models/_cu-models.provider';
+import { CUImage } from '../../../shared/models/_cu-models.provider';
 import { SelectAllDirective } from './../../directives/select-all.directive';
 
-import { SharingOption, SharingOptionContext, QuickShare, FullShare } from '../../../shared/services/share/_sharing-options';
+import { SharingOption, SharingOptionInterface, QuickShare, FullShare } from '../../../shared/models/sharing/_sharing-options';
+import { CUUserPreferences } from '../../../shared/models/cu-user-preferences.class';
 import { FakeService } from '../../../shared/fake/fake.service';
 import { PrefsService } from '../../../shared/services/prefs.service';
-
 
 @Component({
     selector: 'image-bit',
@@ -18,7 +18,7 @@ export class ImageBitComponent implements OnInit {
     @Output() uploadProgress: EventEmitter<number> = new EventEmitter<number>();
     progress: number;
     progressComplete: boolean = false;
-    sharingOptions: CUSharingOption[];
+    sharingOptions: SharingOption[];
 
     constructor(private _fakeService: FakeService, private _prefs: PrefsService) { }
 

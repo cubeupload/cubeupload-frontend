@@ -1,29 +1,9 @@
-import { SharingOption, QuickShare, FullShare } from '../../shared/services/share/_sharing-options';
-
-export interface CUUserPreferencesInterface {
-    sharingOptions: CUSharingOption[];
-}
+import { SharingOption } from './sharing/_sharing-options';
 
 export class CUUserPreferences {
-    sharingOptions: CUSharingOption[];
+    sharingOptions: SharingOption[];
 
-    constructor(sharingOptions: CUSharingOption[]) {
+    constructor(sharingOptions: SharingOption[]) {
         this.sharingOptions = sharingOptions;
     }
-
-    sharingOptionForId(): CUSharingOption {
-        return {
-            name: 'p',
-            description: 'l',
-            strategy: new QuickShare(),
-            order: 1
-        };
-    }
-}
-
-export interface CUSharingOption {
-    name: string;
-    description: string;
-    strategy: SharingOption;
-    order: number;
 }
