@@ -1,6 +1,5 @@
 import { Observable } from 'rxjs';
-import { CUImage, CUAlbum, CUUser, CUFile } from './../models/_cu-models.provider';
-import { CUUserPreferences, CUSharingOption } from './../../shared/models/cu-user-preferences.class';
+import { CUImage, CUAlbum, CUUser, CUFile, CUUserPreferences, CUSharingOption, CUUserPreferencesInterface } from './../../shared/models/_cu-models.provider';
 import { QuickShare } from '../../shared/services/share/quick-share.option';
 import { FullShare } from '../../shared/services/share/full-share.option';
 
@@ -193,8 +192,8 @@ export class FakeData {
         ];
     }
 
-    public static get Preferences(): CUUserPreferences {
-        let prefs: CUUserPreferences = {
+    public static get Preferences(): CUUserPreferencesInterface {
+        let prefs: CUUserPreferencesInterface = {
             sharingOptions: [
                 {
                     name: 'Direct',

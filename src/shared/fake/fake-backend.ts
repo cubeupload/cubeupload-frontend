@@ -3,8 +3,7 @@ import { MockBackend, MockConnection } from '@angular/http/testing';
 import { Injector } from '@angular/core';
 import { Constants } from './../constants';
 import { FakeData } from './fake-data';
-import { CUImage, CUAlbum} from './../../shared/models/_cu-models.provider';
-import { CUUserPreferences, CUSharingOption } from './../../shared/models/cu-user-preferences.class';
+import { CUImage, CUAlbum, CUUserPreferences, CUSharingOption} from './../../shared/models/_cu-models.provider';
 import { QuickShare } from '../../shared/services/share/quick-share.option';
 import { FullShare } from '../../shared/services/share/full-share.option';
 

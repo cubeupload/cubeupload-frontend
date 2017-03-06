@@ -1,6 +1,6 @@
 import { SharingOption, SharingOptionContext, QuickShare, FullShare } from './../../services/share/_sharing-options';
 import { Component, OnInit, Input } from '@angular/core';
-import { CUUserPreferences, CUSharingOption } from '../../../shared/models/cu-user-preferences.class';
+import { CUUserPreferences, CUSharingOption } from '../../../shared/models/_cu-models.provider';
 
 @Component({
     selector: 'quick-share',

@@ -1,5 +1,5 @@
-import { QuickShare } from './quick-share.option'; 
-import { FullShare } from './full-share.option'; 
+import { QuickShare } from './quick-share.option';
+import { FullShare } from './full-share.option';
 
 export { QuickShare, FullShare }
 
@@ -17,5 +17,20 @@ export class SharingOptionContext {
 
     public getLink(url: string): string {
         return this.strategy.getLink(url);
+    }
+}
+
+export class SharingOptionFactory {
+    sharingOptions: SharingOption[];
+
+    constructor() {
+        this.sharingOptions = [
+            new QuickShare(),
+            new FullShare()];
+    }
+
+    getSharingOptionWithId(id: number): SharingOption {
+        return this.sharingOptions
+            .find((option) => option.uniqueId === id);
     }
 }

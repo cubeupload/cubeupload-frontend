@@ -1,9 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { CUImage } from '../../../shared/models/_cu-models.provider';
+import { CUImage, CUUserPreferences, CUSharingOption } from '../../../shared/models/_cu-models.provider';
 import { SelectAllDirective } from './../../directives/select-all.directive';
 
 import { SharingOption, SharingOptionContext, QuickShare, FullShare } from '../../../shared/services/share/_sharing-options';
-import { CUUserPreferences, CUSharingOption } from '../../../shared/models/cu-user-preferences.class';
 import { FakeService } from '../../../shared/fake/fake.service';
 import { PrefsService } from '../../../shared/services/prefs.service';
 
