@@ -17,6 +17,7 @@ import { QuickShareComponent } from './components/sharing/quick-share.component'
 import { SelectAllDirective } from './../shared/directives/select-all.directive';
 
 import { PrefsService } from './services/prefs.service';
+import { SharingOptionFactory } from './models/sharing/_sharing-options'
 
 @NgModule({
   imports: [
@@ -66,7 +67,8 @@ import { PrefsService } from './services/prefs.service';
     SelectAllDirective
   ],
   providers: [
-    PrefsService
+    PrefsService,
+    SharingOptionFactory
   ]
 
 })

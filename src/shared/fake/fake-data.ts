@@ -199,16 +199,16 @@ export class FakeData {
             sharingOptions: [
                 {
                     name: 'Share',
-                    description: 'A link to the image in a page with the title and description',
+                    description: 'Image on a webpage',
                     enabled: true,
                     order: 0,
                     strategyId: '1002',
                 },
                 {
-                    name: 'Share',
-                    description: 'A link to the image in a page with the title and description',
+                    name: 'Direct',
+                    description: 'Direct link to the image.',
                     enabled: true,
-                    order: 0,
+                    order: 1,
                     strategyId: '1001',
                 }
             ]
