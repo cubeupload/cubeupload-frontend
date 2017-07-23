@@ -1,5 +1,6 @@
 import { SharingOption, SharingOptionInterface, QuickShare, FullShare } from './../../models/sharing/_sharing-options';
 import { Component, OnInit, Input } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CUUserPreferences } from '../../../shared/models/cu-user-preferences.class';
 
 @Component({

@@ -14,7 +14,7 @@
             <span class="input-group-addon">Share</span>
             <input readonly selectAll [selectOnMouseEnter]="false" class="form-control" type="text" value="{{album.albumUrl}}">
             <span class="input-group-addon">
-                <button class="btn btn-primary btn-xs" tabindex="-1" type="button" >Copy</button>
+                <button class="btn btn-primary btn-xs" tabindex="-1" type="button" [ngxClipboard]="album.albumUrl" >Copy</button>
             </span>
         </div>
     </div>

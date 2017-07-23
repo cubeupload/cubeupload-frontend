@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, RouterLinkActive } from '@angular/router';
 import { BsDropdownModule } from 'ngx-bootstrap';
+import { ClipboardModule } from 'ngx-clipboard';
 
 import { ImageGridComponent } from './components/images/image-grid.component';
 import { ImageBitComponent } from './components/images/image-bit.component';
@@ -26,7 +27,8 @@ import { SharingOptionFactory } from './models/sharing/_sharing-options'
     ReactiveFormsModule,
     HttpModule,
     RouterModule,
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    ClipboardModule
   ],
   declarations: [
     ImageGridComponent,
