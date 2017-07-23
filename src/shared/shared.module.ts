@@ -3,7 +3,7 @@ import { BrowserModule, Title } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, RouterLinkActive } from '@angular/router';
-import { DropdownModule } from 'ng2-bootstrap';
+import { BsDropdownModule } from 'ngx-bootstrap';
 
 import { ImageGridComponent } from './components/images/image-grid.component';
 import { ImageBitComponent } from './components/images/image-bit.component';
@@ -26,7 +26,7 @@ import { SharingOptionFactory } from './models/sharing/_sharing-options'
     ReactiveFormsModule,
     HttpModule,
     RouterModule,
-    DropdownModule.forRoot()
+    BsDropdownModule.forRoot()
   ],
   declarations: [
     ImageGridComponent,
@@ -49,7 +49,7 @@ import { SharingOptionFactory } from './models/sharing/_sharing-options'
     FormsModule,
     HttpModule,
     RouterModule,
-    DropdownModule,
+    BsDropdownModule,
 
     ImageGridComponent,
     ImageBitComponent,

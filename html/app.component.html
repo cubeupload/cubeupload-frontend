@@ -24,12 +24,12 @@
 			<li class="hidden-xs"><a [routerLink]="['my-images']">My Images</a></li>
 			<li class="hidden-xs"><a [routerLink]="['my-albums']">My Albums</a></li>
 			<li class="dropdown" dropdown>
-				<a href="#" class="dropdown-toggle" dropdownToggle role="button" aria-haspopup="true" aria-expanded="false" id="navigation-dropdown">
+				<a class="dropdown-toggle" dropdownToggle role="button" aria-haspopup="true" aria-expanded="false" id="navigation-dropdown">
 					<span class="hidden-xs">Username</span>
 					<span class="visible-xs"><span class="glyphicon glyphicon-option-horizontal"></span></span>
 					<span class="caret hidden-xs"></span>
 				</a>
-				<ul class="dropdown-menu arrow arrow-right dropdown-menu-right" dropdownMenu>
+				<ul class="dropdown-menu arrow arrow-right dropdown-menu-right" *dropdownMenu>
 					<li class="visible-xs"><a [routerLink]="['images']">My Images</a></li>
 					<li class="visible-xs"><a [routerLink]="['albums']">My Albums</a></li>
 					<li><a routerLink="/account" routerLinkActive="active">Account</a></li>
