@@ -23,7 +23,7 @@ export class CUImage extends CUObject {
     ) {
         super(id, name, description, user, createdAt, updatedAt);
         this.imageUrl = imageUrl,
-        this.thumbUrl = this.thumbUrlForImage(imageUrl),
+        this.thumbUrl = imageUrl,//this.thumbUrlForImage(imageUrl),
         this.filesize = filesize,
         this.albums = albums
     }

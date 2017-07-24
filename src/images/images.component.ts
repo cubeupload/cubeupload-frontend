@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ImagesService } from './images.service';
 import { CUImage} from './../shared/models/_cu-models.provider';
+import { Observable, Subject, BehaviorSubject } from 'rxjs';
 
 @Component({
     selector: 'images',
@@ -12,9 +13,10 @@ export class ImagesComponent implements OnInit {
     constructor(private _imagesService: ImagesService) { }
 
     ngOnInit() {
-        this._imagesService.getImages()
-            .subscribe(response => {
-                return this.images = response;
-            });
+        this._imagesService.getImages().subscribe(images => this.images = images);
+    }
+
+    insertImage(image: CUImage){
+        this.images.push(image);
     }
 }

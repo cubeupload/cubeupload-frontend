@@ -1,7 +1,7 @@
 export class Constants {
 
     public static get API_Base(): string {
-        return `/api/${this.API_Version}`;
+        return `${process.env.API_URL}/${this.API_Version}`;
     }
 
     public static get API_Version(): number {

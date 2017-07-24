@@ -5,7 +5,7 @@
 
 			<div class="btn-group navbar-btn pull-left" dropdown>
 				<label class="btn btn-primary upload-navbar-button" for="upload">
-				<input type="file" id="upload" style="display:none">
+				<input type="file" id="upload" style="display:none" (change)="addUpload($event)">
 				Upload Image
 				</label>
 				<button type="button" class="btn btn-primary upload-navbar-button dropdown-toggle" dropdownToggle data-toggle="dropdown" aria-haspopup="true"
