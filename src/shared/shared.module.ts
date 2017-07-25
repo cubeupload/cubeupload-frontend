@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, RouterLinkActive } from '@angular/router';
 import { BsDropdownModule } from 'ngx-bootstrap';
 import { ClipboardModule } from 'ngx-clipboard';
+import { NgUploaderModule } from 'ngx-uploader';
 
 import { ImageGridComponent } from './components/images/image-grid.component';
 import { ImageBitComponent } from './components/images/image-bit.component';
@@ -16,6 +17,7 @@ import { ProgressBitComponent } from './components/misc/progress-bit.component';
 import { QuickShareComponent } from './components/sharing/quick-share.component';
 
 import { SelectAllDirective } from './../shared/directives/select-all.directive';
+import { ThumbnailPipe } from './../shared/pipes/thumbnail.pipe';
 
 import { PrefsService } from './services/prefs.service';
 import { UploadService } from './services/upload/upload.service';
@@ -29,23 +31,21 @@ import { SharingOptionFactory } from './models/sharing/_sharing-options'
     HttpModule,
     RouterModule,
     BsDropdownModule.forRoot(),
-    ClipboardModule
+    ClipboardModule,
+    NgUploaderModule,
   ],
   declarations: [
     ImageGridComponent,
     ImageBitComponent,
-
     AlbumGridComponent,
     AlbumBitComponent,
-
     GalleryComponent,
     GalleryImageComponent,
-
     ProgressBitComponent,
-
     QuickShareComponent,
-
-    SelectAllDirective
+    SelectAllDirective,
+    ThumbnailPipe
+    
   ],
   exports: [
     BrowserModule,
@@ -67,12 +67,13 @@ import { SharingOptionFactory } from './models/sharing/_sharing-options'
 
     QuickShareComponent,
 
-    SelectAllDirective
+    SelectAllDirective,
+    ThumbnailPipe
   ],
   providers: [
     UploadService,
     PrefsService,
-    SharingOptionFactory
+    SharingOptionFactory,
   ]
 
 })

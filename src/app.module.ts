@@ -13,6 +13,8 @@ import { AlbumsModule } from './albums/albums.module';
 import { AccountModule } from './account/account.module';
 import { fakeModuleProvider } from './shared/fake/fake-backend.provider';
 
+import { NgUploaderModule } from 'ngx-uploader';
+
 
 @NgModule({
   imports: [  
@@ -22,6 +24,7 @@ import { fakeModuleProvider } from './shared/fake/fake-backend.provider';
     ImagesModule,
     AlbumsModule,
     AccountModule,
+    NgUploaderModule
   ],
   declarations: [
     AppComponent,
