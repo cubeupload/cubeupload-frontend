@@ -16,6 +16,7 @@ import { ProgressBitComponent } from './components/misc/progress-bit.component';
 import { QuickShareComponent } from './components/sharing/quick-share.component';
 
 import { SelectAllDirective } from './../shared/directives/select-all.directive';
+import { FakeService } from './../shared/fake/fake.service';
 
 import { PrefsService } from './services/prefs.service';
 import { UploadService } from './services/upload/upload.service';
@@ -72,6 +73,7 @@ import { SharingOptionFactory } from './models/sharing/_sharing-options'
   providers: [
     UploadService,
     PrefsService,
+    FakeService,
     SharingOptionFactory
   ]
 
