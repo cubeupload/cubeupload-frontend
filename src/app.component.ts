@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Route, Router, NavigationEnd } from '@angular/router';
 import { UploadService } from './shared/services/upload/upload.service';
 import { ImagesService } from './images/images.service';
+import { UploadNavService } from './shared/services/upload-nav.service';
 import { ImagesComponent } from './images/images.component';
 import { Observable } from 'rxjs';
-import { CUImage} from './shared/models/_cu-models.provider';
+import { CUImage } from './shared/models/_cu-models.provider';
 import '../styles/style.scss';
 
 @Component({
@@ -11,18 +13,16 @@ import '../styles/style.scss';
   templateUrl: './html/app.component.html',
 })
 export class AppComponent implements OnInit {
-  uploads: CUImage[];
+  hideUpload: boolean;
 
-  public constructor(private _uploadService: UploadService, private _imagesService: ImagesService) {
-  }
+  public constructor(
+    private _uploadNavService: UploadNavService,
+  ) { }
 
   ngOnInit(): void {
-    
-  }
 
-  addUpload(event){
-    this._uploadService.addUpload(event);
-  }
+    this._uploadNavService.hideUploadNav.subscribe(hide => this.hideUpload = hide);
 
+  }
 
 }

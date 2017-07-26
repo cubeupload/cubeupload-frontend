@@ -6,7 +6,10 @@ const appRoutes : Routes =
 [
     {
         path : 'account',
-        component : AccountComponent
+        component : AccountComponent,
+        data: {
+            hideUpload: false
+        }
     },
 ];
 

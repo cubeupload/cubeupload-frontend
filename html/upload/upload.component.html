@@ -1,7 +1,7 @@
 <!-- <div ngFileDrop (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput" [ngClass]="{ 'is-drop-over': dragOver }">
 </div> -->
 
-<div class="jumbotron text-center upload-jumbotron" [ngClass]="upload ? 'upload-collapse':''">
+<div class="jumbotron text-center upload-jumbotron">
 
     <div>
         <label>
@@ -21,7 +21,7 @@
 </div>
 <div class="container-fluid upload-images">
     <p class="text-center page-header">Uploading:</p>
-    <div *ngFor="let file of files">
+    <div *ngFor="let file of files" class="col-sm-3">
         <div class="panel panel-default image-bit">
             <div class="panel-heading">
                 <div>{{file.name}}</div>

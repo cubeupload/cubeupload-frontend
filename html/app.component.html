@@ -3,8 +3,8 @@
 		<div class="navbar-header">
 			<a class="navbar-brand" [routerLink]="['']">CubeUpload</a>
 
-			<div class="btn-group navbar-btn pull-left" dropdown>
-				<label class="btn btn-primary upload-navbar-button" for="upload">
+			<div class="btn-group navbar-btn pull-left" dropdown *ngIf="!hideUpload">
+				<label class="btn btn-primary upload-navbar-button" for="upload" >
 				<input type="file" id="upload" style="display:none" (change)="addUpload($event)">
 				Upload Image
 				</label>

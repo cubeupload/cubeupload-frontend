@@ -20,6 +20,7 @@ import { SelectAllDirective } from './../shared/directives/select-all.directive'
 import { ThumbnailPipe } from './../shared/pipes/thumbnail.pipe';
 
 import { PrefsService } from './services/prefs.service';
+import { UploadNavService } from './services/upload-nav.service';
 import { UploadService } from './services/upload/upload.service';
 import { SharingOptionFactory } from './models/sharing/_sharing-options'
 
@@ -74,6 +75,7 @@ import { SharingOptionFactory } from './models/sharing/_sharing-options'
     UploadService,
     PrefsService,
     SharingOptionFactory,
+    UploadNavService
   ]
 
 })

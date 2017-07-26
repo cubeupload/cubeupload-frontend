@@ -7,11 +7,17 @@ const appRoutes : Routes =
 [
     {
         path : 'my-albums',
-        component : AlbumsComponent
+        component : AlbumsComponent,
+        data: {
+            hideUpload: false
+        }
     },
     {
         path : 'album/:id',
-        component : AlbumComponent
+        component : AlbumComponent,
+        data: {
+            hideUpload: false
+        }
     },
 ];
 

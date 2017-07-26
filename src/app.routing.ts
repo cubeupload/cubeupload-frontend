@@ -9,7 +9,10 @@ const appRoutes : Routes =
 [
     {
         path: '',
-        component: UploadComponent
+        component: UploadComponent,
+        data: {
+            hideUpload: true
+        }
     },
     {
         path: '#',
