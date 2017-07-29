@@ -1,6 +1,3 @@
-<!-- <div ngFileDrop (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput" [ngClass]="{ 'is-drop-over': dragOver }">
-</div> -->
-
 <div class="jumbotron text-center upload-jumbotron">
 
     <div>
@@ -26,7 +23,7 @@
             <div class="panel-heading">
                 <div>{{file.name}}</div>
             </div>
-            <progress-bit [progress]="progress" [showText]="false" *ngIf="!progressComplete"></progress-bit>
+             <progress-bit [progress]="file.progress.data.percentage"></progress-bit> 
             <div class="panel-body thumb-container">
                 <a [routerLink]="['/image', file.id]">
             <img class="thumb-container-image" style="width:100%;" src="{{file.native | thumbnail | async}}" alt="{{file.name}}">

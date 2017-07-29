@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CUImage } from './../../models/_cu-models.provider';
+import { UploadFile } from 'ngx-uploader';
 import { ImagesService } from './../../../images/images.service';
 import { Observable, Subject, BehaviorSubject } from 'rxjs';
 
@@ -8,29 +8,22 @@ export class UploadService {
 
     constructor() { }
 
-    private _uploads: CUImage[] = [];
+    private _uploads: UploadFile[] = [];
 
-    public readonly uploads: Observable<CUImage[]> = Observable.of(this._uploads);
+    public readonly uploads: Observable<UploadFile[]> = Observable.of(this._uploads);
 
 
-    addUpload(event:any) {
-        this.getPreviewUrl(event).then(url => {
-            this._uploads.push(new CUImage('123', 'New Upload', 'Add Description', null, url, null, null, null, null))
-        });
+    addUpload(file: UploadFile) {
+        this._uploads.push(file);
     }
 
-    getPreviewUrl(file: any) {
-        return new Promise<any>((resolve, reject) => {
-            if (file) {
-                var reader = new FileReader();
+    updateUpload(file: UploadFile) {
+        const index = this._uploads.findIndex(file => file.id === file.id);
+        this._uploads[index] = file;
+    }
 
-                reader.onload = (event) => {
-                    resolve(event.target['result']);
-                }
-
-                reader.readAsDataURL(file);
-            }
-        });
+    removeUpload(file: UploadFile) {
+        this._uploads = this._uploads.filter((file: UploadFile) => file !== file);
     }
 
 }

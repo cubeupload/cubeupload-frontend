@@ -1,47 +1,47 @@
-<nav class="navbar navbar-default navbar-fixed-top">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<a class="navbar-brand" [routerLink]="['']">CubeUpload</a>
-
-			<div class="btn-group navbar-btn pull-left" dropdown *ngIf="!hideUpload">
-				<label class="btn btn-primary upload-navbar-button" for="upload" >
-				<input type="file" id="upload" style="display:none" (change)="addUpload($event)">
-				Upload Image
+<div ngFileDrop class="app drop-container" (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput" [ngClass]="{ 'is-drop-over': dragOver }">
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid text-center">
+			<div class="navbar-header" *ngIf="!hideUpload">
+				<div class="btn-group navbar-btn pull-left" dropdown>
+					<label class="btn btn-primary upload-navbar-button" for="upload">
+					<input type="file" id="upload" style="display:none" (change)="addUpload($event)"> Upload Image
 				</label>
-				<button type="button" class="btn btn-primary upload-navbar-button dropdown-toggle" dropdownToggle data-toggle="dropdown" aria-haspopup="true"
-					aria-expanded="false">
-				<span class="caret"></span>
-				<span class="sr-only">Toggle Dropdown</span>
-			</button>
-				<ul class="dropdown-menu arrow">
-					<li><a href="#">Upload to Album</a></li>
-					<li><a href="#">Paste URL</a></li>
-				</ul>
+					<button type="button" class="btn btn-primary upload-navbar-button dropdown-toggle" dropdownToggle data-toggle="dropdown"
+					 aria-haspopup="true" aria-expanded="false">
+					<span class="caret"></span>
+					<span class="sr-only">Toggle Dropdown</span>
+				</button>
+					<ul class="dropdown-menu arrow">
+						<li><a href="#">Upload to Album</a></li>
+						<li><a href="#">Paste URL</a></li>
+					</ul>
+				</div>
 			</div>
-		</div>
 
-		<ul class="nav navbar-nav navbar-right">
-			<li class="hidden-xs"><a [routerLink]="['my-images']">My Images</a></li>
-			<li class="hidden-xs"><a [routerLink]="['my-albums']">My Albums</a></li>
-			<li class="dropdown" dropdown>
-				<a class="dropdown-toggle" dropdownToggle role="button" aria-haspopup="true" aria-expanded="false" id="navigation-dropdown">
+
+			<ul class="nav navbar-nav navbar-right">
+				<li class="hidden-xs"><a [routerLink]="['my-images']">My Images</a></li>
+				<li class="hidden-xs"><a [routerLink]="['my-albums']">My Albums</a></li>
+				<li class="dropdown" dropdown>
+					<a class="dropdown-toggle" dropdownToggle role="button" aria-haspopup="true" aria-expanded="false" id="navigation-dropdown">
 					<span class="hidden-xs">Username</span>
 					<span class="visible-xs"><span class="glyphicon glyphicon-option-horizontal"></span></span>
 					<span class="caret hidden-xs"></span>
 				</a>
-				<ul class="dropdown-menu arrow arrow-right dropdown-menu-right" *dropdownMenu>
-					<li class="visible-xs"><a [routerLink]="['images']">My Images</a></li>
-					<li class="visible-xs"><a [routerLink]="['albums']">My Albums</a></li>
-					<li><a routerLink="/account" routerLinkActive="active">Account</a></li>
-					<li><a routerLink="/settings" routerLinkActive="active">Settings</a></li>
-					<li role="separator" class="divider"></li>
-					<li><a href="#">Logout</a></li>
-				</ul>
-			</li>
-		</ul>
+					<ul class="dropdown-menu arrow arrow-right dropdown-menu-right" *dropdownMenu>
+						<li class="visible-xs"><a [routerLink]="['images']">My Images</a></li>
+						<li class="visible-xs"><a [routerLink]="['albums']">My Albums</a></li>
+						<li><a routerLink="/account" routerLinkActive="active">Account</a></li>
+						<li><a routerLink="/settings" routerLinkActive="active">Settings</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="#">Logout</a></li>
+					</ul>
+				</li>
+			</ul>
 
-	</div>
-</nav>
-<main role="main" class="main-container">
-	<router-outlet></router-outlet>
-</main>
+		</div>
+	</nav>
+	<main role="main" class="main-container">
+		<router-outlet></router-outlet>
+	</main>
+</div>

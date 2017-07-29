@@ -6,7 +6,7 @@ import { Directive, OnInit, Input, ElementRef, HostListener } from '@angular/cor
 export class SelectAllDirective implements OnInit {
     @Input() selectOnMouseEnter: boolean = false;
 
-    constructor(private _element: ElementRef) {}
+    constructor(private _element: ElementRef) { }
 
     selectElementText(element): void {
         element.focus();

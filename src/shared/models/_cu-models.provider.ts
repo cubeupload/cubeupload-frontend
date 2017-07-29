@@ -3,6 +3,7 @@ import { CUAlbum } from './cu-album.class';
 import { CUFile } from './cu-file.class';
 import { CUObject } from './cu-object.class';
 import { CUUser } from './cu-user.class';
+import { CUUpload } from './cu-upload.class';
 import { CUUserPreferences } from './cu-user-preferences.class';
 import { SharingOption } from './cu-sharing-option.class';
 
@@ -12,6 +13,7 @@ export {
     CUFile,
     CUObject,
     CUUser,
+    CUUpload,
     CUUserPreferences,
     SharingOption
 }
@@ -22,6 +24,7 @@ export var CUModels = [
     CUFile,
     CUObject,
     CUUser,
+    CUUpload,
     CUUserPreferences,
     SharingOption
 ];
