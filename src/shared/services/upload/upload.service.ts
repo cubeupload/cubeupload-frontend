@@ -2,28 +2,27 @@ import { Injectable } from '@angular/core';
 import { UploadFile } from 'ngx-uploader';
 import { ImagesService } from './../../../images/images.service';
 import { Observable, Subject, BehaviorSubject } from 'rxjs';
+import 'rxjs/add/operator/mergeAll';
 
 @Injectable()
 export class UploadService {
 
     constructor() { }
 
-    private _uploads: UploadFile[] = [];
-
-    public readonly uploads: Observable<UploadFile[]> = Observable.of(this._uploads);
-
+    private _uploadQueue: UploadFile[] = [];
+    public readonly uploadQueue: Observable<UploadFile[]> = Observable.of(this._uploadQueue);
 
     addUpload(file: UploadFile) {
-        this._uploads.push(file);
+        this._uploadQueue.push(file);
     }
 
     updateUpload(file: UploadFile) {
-        const index = this._uploads.findIndex(file => file.id === file.id);
-        this._uploads[index] = file;
+        const index = this._uploadQueue.findIndex(upload => upload.id === file.id);
+        this._uploadQueue[index] = file;
     }
 
     removeUpload(file: UploadFile) {
-        this._uploads = this._uploads.filter((file: UploadFile) => file !== file);
+        this._uploadQueue = this._uploadQueue.filter((file: UploadFile) => file !== file);
     }
 
 }

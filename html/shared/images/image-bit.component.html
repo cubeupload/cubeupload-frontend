@@ -3,7 +3,6 @@
         <div>{{image.name}}</div>
         <div class="small text-muted">{{image.description}}</div>
     </div>
-    <progress-bit [progress]="progress" *ngIf="!progressComplete"></progress-bit>
     <div class="panel-body thumb-container">
         <a [routerLink]="['/image', image.id]">
             <img class="thumb-container-image" src="{{image.thumbUrl}}" alt="{{image.description}}">

@@ -3,6 +3,7 @@ import { ImagesService } from './../images/images.service';
 import { UploadService } from './../shared/services/upload/upload.service';
 import { CUUpload } from './../shared/models/_cu-models.provider';
 import { ThumbnailPipe } from './../shared/pipes/thumbnail.pipe'
+import { Constants } from './../shared/constants';
 import { UploadOutput, UploadInput, UploadFile, humanizeBytes } from 'ngx-uploader';
 
 @Component({
@@ -11,7 +12,7 @@ import { UploadOutput, UploadInput, UploadFile, humanizeBytes } from 'ngx-upload
 })
 export class UploadComponent implements OnInit {
     formData: FormData;
-    files: UploadFile[] = [];
+    uploads: UploadFile[] = [];
     uploadInput: EventEmitter<UploadInput>;
     humanizeBytes: Function;
     dragOver: boolean;
@@ -22,8 +23,7 @@ export class UploadComponent implements OnInit {
     }
 
     ngOnInit(){
-        console.info("Upload Init");
-        this._uploadService.uploads.subscribe(uploads => this.files = uploads);
+        this._uploadService.uploadQueue.subscribe(uploads => this.uploads = uploads);
     }
 
     onUploadOutput(output: UploadOutput): void {
@@ -32,9 +32,14 @@ export class UploadComponent implements OnInit {
         if (output.type === 'allAddedToQueue') { // when all files added in queue
             
             // uncomment this if you want to auto upload files when added
-            // this.startUpload();
+            this.startUpload();
 
         } else if (output.type === 'addedToQueue') {
+
+            if (output.file.size > Constants.MAX_File_size()) {
+                console.warn("Your file is too large, noooo")
+                return;
+            }
             
             output.file['native'] = output.nativeFile;
             this._uploadService.addUpload(output.file);

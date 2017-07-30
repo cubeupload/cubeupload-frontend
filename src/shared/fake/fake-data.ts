@@ -2,8 +2,8 @@ import { Observable } from 'rxjs';
 import { CUImage, CUAlbum, CUUser, CUFile } from './../models/_cu-models.provider';
 import { SharingOption } from './../models/sharing/_sharing-options';
 import { CUUserPreferences } from './../../shared/models/cu-user-preferences.class';
-import { QuickShare } from '../../shared/models/sharing/quick-share.option';
-import { FullShare } from '../../shared/models/sharing/full-share.option';
+import { DirectShare } from '../../shared/models/sharing/direct-share.option';
+import { SharingPage } from '../../shared/models/sharing/sharing-page.option';
 
 export class FakeData {
 

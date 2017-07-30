@@ -1,5 +1,9 @@
 export class Constants {
 
+    public static Site_URL(): string {
+        return `https://cubeupload.com`;
+    }
+
     public static get API_Base(): string {
         return `${process.env.API_URL}/${this.API_Version}`;
     }
@@ -42,6 +46,10 @@ export class Constants {
 
     public static API_Preferences_Get(): string {
         return `${this.API_Base}/preferences`;
+    }
+
+    public static MAX_File_size(): number {
+        return 5242880;
     }
     
 }

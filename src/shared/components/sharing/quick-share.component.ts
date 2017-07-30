@@ -1,4 +1,4 @@
-import { SharingOption, SharingOptionInterface, QuickShare, FullShare } from './../../models/sharing/_sharing-options';
+import { SharingOption, SharingOptionInterface, DirectShare, SharingPage } from './../../models/sharing/_sharing-options';
 import { Component, OnInit, Input } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CUUserPreferences } from '../../../shared/models/cu-user-preferences.class';
@@ -7,7 +7,7 @@ import { CUUserPreferences } from '../../../shared/models/cu-user-preferences.cl
     selector: 'quick-share',
     templateUrl: './html/shared/sharing/quick-share.component.html'
 })
-export class QuickShareComponent implements OnInit {
+export class DirectShareComponent implements OnInit {
     @Input() url: string;
     @Input() sharingOption: SharingOption;
     link: string;
@@ -19,6 +19,6 @@ export class QuickShareComponent implements OnInit {
     }
 
     getLink(): void {
-        this.link = this.sharingOption.strategy.getLink('lolhi');
+        this.link = this.sharingOption.strategy.getLink(this.url);
     }
 }

@@ -1,7 +1,7 @@
-import { QuickShare } from './quick-share.option';
-import { FullShare } from './full-share.option';
+import { DirectShare } from './direct-share.option';
+import { SharingPage } from './sharing-page.option';
 
-export { QuickShare, FullShare }
+export { DirectShare, SharingPage }
 
 export interface SharingOptionInterface {
     id: string;
@@ -39,8 +39,8 @@ export class SharingOptionFactory {
 
     constructor() {
         this.sharingOptions = [
-            new QuickShare(),
-            new FullShare()
+            new DirectShare(),
+            new SharingPage()
         ];
     }
 

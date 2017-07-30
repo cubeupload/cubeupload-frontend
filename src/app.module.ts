@@ -6,10 +6,10 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { AppComponent } from './app.component';
 import { routing, appRoutingProviders } from './app.routing';
 import { AUTH_PROVIDERS, provideAuth, JwtHelper} from 'angular2-jwt';
-import { UploadComponent } from './upload/upload.component'
 import { SharedModule } from './shared/shared.module';
 import { ImagesModule } from './images/images.module';
 import { AlbumsModule } from './albums/albums.module';
+import { UploadModule } from './upload/upload.module';
 import { AccountModule } from './account/account.module';
 import { fakeModuleProvider } from './shared/fake/fake-backend.provider';
 
@@ -23,12 +23,12 @@ import { NgUploaderModule } from 'ngx-uploader';
     BrowserModule,
     ImagesModule,
     AlbumsModule,
+    UploadModule,
     AccountModule,
     NgUploaderModule
   ],
   declarations: [
-    AppComponent,
-    UploadComponent
+    AppComponent
   ],
   providers: [
     appRoutingProviders,

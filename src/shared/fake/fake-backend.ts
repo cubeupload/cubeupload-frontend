@@ -5,7 +5,7 @@ import { Constants } from './../constants';
 import { FakeData } from './fake-data';
 import { CUImage, CUAlbum} from './../../shared/models/_cu-models.provider';
 import { CUUserPreferences } from './../../shared/models/cu-user-preferences.class';
-import { SharingOption, SharingOptionInterface, QuickShare, FullShare } from './../models/sharing/_sharing-options';
+import { SharingOption, SharingOptionInterface, DirectShare, SharingPage } from './../models/sharing/_sharing-options';
 
 class MockError extends Response implements Error {
     name: any

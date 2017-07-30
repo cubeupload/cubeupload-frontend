@@ -1,24 +1,9 @@
-<div ngFileDrop class="app drop-container" (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput" [ngClass]="{ 'is-drop-over': dragOver }">
-	<nav class="navbar navbar-default navbar-fixed-top">
+<div>
+	<nav class="navbar navbar-default navbar-fixed-top">	
 		<div class="container-fluid text-center">
-			<div class="navbar-header" *ngIf="!hideUpload">
-				<div class="btn-group navbar-btn pull-left" dropdown>
-					<label class="btn btn-primary upload-navbar-button" for="upload">
-					<input type="file" id="upload" style="display:none" (change)="addUpload($event)"> Upload Image
-				</label>
-					<button type="button" class="btn btn-primary upload-navbar-button dropdown-toggle" dropdownToggle data-toggle="dropdown"
-					 aria-haspopup="true" aria-expanded="false">
-					<span class="caret"></span>
-					<span class="sr-only">Toggle Dropdown</span>
-				</button>
-					<ul class="dropdown-menu arrow">
-						<li><a href="#">Upload to Album</a></li>
-						<li><a href="#">Paste URL</a></li>
-					</ul>
-				</div>
-			</div>
-
-
+			<ul class="nav navbar-nav navbar-left">
+				<li><a [routerLink]="['']">CubeUpload</a></li>
+			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li class="hidden-xs"><a [routerLink]="['my-images']">My Images</a></li>
 				<li class="hidden-xs"><a [routerLink]="['my-albums']">My Albums</a></li>

@@ -1,38 +1,18 @@
-<div class="jumbotron text-center upload-jumbotron">
+<div class="jumbotron text-center upload-jumbotron" ngFileDrop (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput" [ngClass]="{ 'drop': dragOver }">
 
     <div>
         <label>
             <a class="btn btn-primary btn-lg btn-subtitled" type="button" role="button">Select Images 
                 <span class="btn-subtitle">Images, 5mb each</span>
             </a>
-            <input type="file" style="visibility:hidden;" ngFileSelect (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput" multiple>
+            <input type="file" style="visibility:hidden;" ngFileSelect (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput" multiple accept="image/x-png,image/gif,image/jpeg">
         </label>
 
         <p class="text-muted small">or Drag &amp; Drop <i>here</i></p>
     </div>
-    <div>
-        <button type="button" class="btn btn-primary" (click)="startUpload()">
-        Start Upload
-        </button>
-    </div>
 </div>
 <div class="container-fluid upload-images">
     <p class="text-center page-header">Uploading:</p>
-    <div *ngFor="let file of files" class="col-sm-3">
-        <div class="panel panel-default image-bit">
-            <div class="panel-heading">
-                <div>{{file.name}}</div>
-            </div>
-             <progress-bit [progress]="file.progress.data.percentage"></progress-bit> 
-            <div class="panel-body thumb-container">
-                <a [routerLink]="['/image', file.id]">
-            <img class="thumb-container-image" style="width:100%;" src="{{file.native | thumbnail | async}}" alt="{{file.name}}">
-        </a>
-            </div>
-            <div class="panel-footer" *ngIf="image?.imageUrl">
-                <quick-share *ngFor="let sharingOption of sharingOptions" [url]="file.imageUrl" [sharingOption]="sharingOption"></quick-share>
-            </div>
-        </div>
-    </div>
+    <upload-grid [uploads]="uploads"></upload-grid>
     <!--TODO make upload-grid-->
 </div>
