@@ -9,12 +9,13 @@
 }
 
 .thumb-container-image {
-    width: 100%;
-    max-width: 100%;
+    max-height: $grid-image-height;
 }
 
 .thumb-container {
     padding: 0;
+    background-color: $color-dark;
+    text-align: center;
 }
 
 progress-bit {

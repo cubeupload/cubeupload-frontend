@@ -1,0 +1,15 @@
+.upload-bit {
+    .thumb-container {
+        padding: 0;
+        background-color: $color-dark;
+        text-align: center;
+        min-height: $grid-image-height;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .thumb-container-image {
+        max-height: $grid-image-height;
+        max-width: 100%;
+    }
+}

@@ -1,14 +1,14 @@
-<div class="panel panel-default image-bit">
+<div class="panel panel-default upload-bit">
     <div class="panel-heading">
         <div>{{upload.name}}</div>
     </div>
     <progress-bit [progress]="upload.progress.data.percentage"></progress-bit>
     <div class="panel-body thumb-container">
         <a [routerLink]="['/image', upload.id]">
-            <img class="thumb-container-image" style="width:100%;" src="{{upload.native | thumbnail | async}}" alt="{{upload.name}}">
+            <img class="thumb-container-image" src="{{upload.native | thumbnail | async}}" onerror="this.src='./resources/icon_alt.png'" alt="{{upload.name}}">
         </a>
     </div>
-    <div class="panel-footer">
+    <div class="panel-footer" *ngIf="upload.progress.data.percentage === 100">
         <quick-share *ngFor="let sharingOption of sharingOptions" [url]="upload.imageUrl||'81fsG1.png'" [sharingOption]="sharingOption"></quick-share>
     </div>
 </div>

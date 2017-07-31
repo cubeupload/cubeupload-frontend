@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 var webpackConfig = require('webpack-config');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = new webpackConfig().merge({
     context: __dirname,
@@ -45,6 +46,12 @@ module.exports = new webpackConfig().merge({
         }),
         new ExtractTextPlugin('css/style.css', {
             allChunks: true
+        }),
+        new OptimizeCssAssetsPlugin({
+            assetNameRegExp: /\.css$/g,
+            cssProcessor: require('cssnano'),
+            cssProcessorOptions: { discardComments: { removeAll: true } },
+            canPrint: true
         })
     ]
 });

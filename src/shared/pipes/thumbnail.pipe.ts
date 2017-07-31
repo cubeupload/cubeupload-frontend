@@ -8,7 +8,7 @@ export class ThumbnailPipe implements PipeTransform {
     transform(file: any, ...args: any[]): Promise<string> {
         return new Promise<any>((resolve, reject) => {
             if (file) {
-                var size = 320;
+                var size = 400;
                 var fileTracker = new FileReader;
                 fileTracker.onload = function () {
                     var image = new Image();

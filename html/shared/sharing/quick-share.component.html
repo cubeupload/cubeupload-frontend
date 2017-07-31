@@ -1,6 +1,6 @@
 <div class="input-group" title={{sharingOption.description}}>
     <span class="input-group-addon">{{sharingOption.name}}</span>
-    <input #inputTarget readonly selectAll [selectOnMouseEnter]="false" class="form-control readonly-enabled" type="text" value="{{link}}">
+    <input #inputTarget readonly selectAll [selectOnMouseEnter]="false" class="quick-share-input form-control readonly-enabled" type="text" value="{{link}}">
     <span class="input-group-addon">
         <button class="btn btn-primary btn-xs" tabindex="-1" type="button" [ngxClipboard]="inputTarget">Copy</button>
     </span>
