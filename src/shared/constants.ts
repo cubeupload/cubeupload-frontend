@@ -28,6 +28,10 @@ export class Constants {
         return `t/`
     }
 
+    public static API_Upload_Guest(): string {
+        return `${this.API_Base}/upload`;
+    }
+
     public static API_Albums_Get(): string {
         return `${this.API_Base}/albums`;
     }
@@ -49,7 +53,7 @@ export class Constants {
     }
 
     public static MAX_File_size(): number {
-        return 5242880;
+        return 1048576; //5242880;
     }
     
 }

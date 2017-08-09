@@ -37,11 +37,12 @@ export class UploadComponent implements OnInit {
         } else if (output.type === 'addedToQueue') {
 
             if (output.file.size > Constants.MAX_File_size()) {
-                console.warn("Your file is too large, noooo")
+                console.warn("Your file is too large, noooo");
                 return;
             }
-            
-            output.file['native'] = output.nativeFile;
+
+            console.log("adding")
+
             this._uploadService.addUpload(output.file);
 
         } else if (output.type === 'uploading') {
@@ -66,10 +67,11 @@ export class UploadComponent implements OnInit {
     startUpload(): void {  // manually start uploading
         const event: UploadInput = {
             type: 'uploadAll',
-            url: '/upload',
+            url: 'https://alpha.cubeupload.com/api/upload/guest', //Constants.API_Upload_Guest(),
             method: 'POST',
-            data: { foo: 'bar' },
-            concurrency: 1 // set sequential uploading of files with concurrency 1
+            fieldName: 'img',
+            // data: { foo: 'bar' },
+            concurrency: 3 // set sequential uploading of files with concurrency 1
         }
 
         this.uploadInput.emit(event);

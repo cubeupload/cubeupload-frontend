@@ -1,11 +1,11 @@
 <div class="jumbotron text-center upload-jumbotron" ngFileDrop (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput" [ngClass]="{ 'drop': dragOver }">
 
-    <div>
+    <div class="upload-container" [ngClass]="{ 'expand': uploads.length>0}">
         <label>
             <a class="btn btn-primary btn-lg btn-subtitled" type="button" role="button">Select Images 
                 <span class="btn-subtitle">Images, 5mb each</span>
             </a>
-            <input type="file" style="visibility:hidden;" ngFileSelect (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput" multiple accept="image/x-png,image/gif,image/jpeg">
+            <input type="file" style="visibility:hidden; display: inline-block; margin: 0;width: 0; position: absolute;" ngFileSelect (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput" multiple accept="image/x-png,image/gif,image/jpeg">
         </label>
 
         <p class="text-muted small">or Drag &amp; Drop <i>here</i></p>

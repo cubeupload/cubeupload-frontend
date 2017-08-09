@@ -4,11 +4,20 @@
 
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 40px 0 0;
-    margin: 0 auto;
-    max-width: 480px;
+    margin: 0 20px;
+    max-width: 100%;
     position: relative;
+
+    .upload-container {
+        transition: flex 0.5s;
+        flex: 1;
+        &.expand { 
+            flex: 0;
+        }
+    }
+
 
     &.drop {
         &:after{
@@ -25,7 +34,7 @@
         }   
     }
 
-    p + p {
-        margin-bottom: 0;
+    p {
+        font-size: 18px;
     }
 }

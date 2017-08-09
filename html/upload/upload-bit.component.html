@@ -5,7 +5,7 @@
     <progress-bit [progress]="upload.progress.data.percentage"></progress-bit>
     <div class="panel-body thumb-container">
         <a [routerLink]="['/image', upload.id]">
-            <img class="thumb-container-image" src="{{upload.native | thumbnail | async}}" onerror="this.src='./resources/icon_alt.png'" alt="{{upload.name}}">
+            <img class="thumb-container-image" src="{{upload.nativeFile | thumbnail | async}}" onerror="this.src='./resources/icon_alt.png'" alt="{{upload.name}}">
         </a>
     </div>
     <div class="panel-footer" *ngIf="upload.progress.data.percentage === 100">
