@@ -198,16 +198,20 @@ export class FakeData {
         let prefs = {
             sharingOptions: [
                 {
-                    name: 'Share',
+                    name: 'Share Image',
                     description: 'Image on a webpage',
+                    glyphicon: 'share',
                     enabled: true,
+                    priority: 1,
                     order: 0,
                     strategyId: '1002',
                 },
                 {
-                    name: 'Direct',
+                    name: 'Hot Link',
                     description: 'Direct link to the image.',
+                    glyphicon: 'file',
                     enabled: true,
+                    priority: 2,
                     order: 1,
                     strategyId: '1001',
                 }

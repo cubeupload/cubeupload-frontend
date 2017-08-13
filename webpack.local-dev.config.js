@@ -6,7 +6,7 @@ module.exports = new webpackConfig().extend('./webpack.config.js').merge({
         new webpack.DefinePlugin({
             'process.env': {
                 'ENV': '"local-develop"',
-                'API_URL': '"http://beta.cubeupload.com/api"',
+                'API_URL': '"https://alpha.cubeupload.com/api"',
             }
         }),
     ],

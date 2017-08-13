@@ -9,17 +9,17 @@ $bootstrap-sass-asset-helper: false !default;
 //## Gray and brand colors for use across Bootstrap.
 
 $gray-base:              #000 !default;
-$gray-darker:            #222 !default;
-$gray-dark:              #191a20 !default; 
-$gray:                   #424355 !default;
-$gray-light:             #5e5f79 !default; 
-$gray-lighter:           #8687ad !default; 
+$gray-darker:            #100E0E !default;
+$gray-dark:              #161414 !default; 
+$gray:                   #363535 !default;
+$gray-light:             rgb(119, 119, 119) !default; 
+$gray-lighter:           rgb(238, 238, 238) !default; 
 
 $brand-primary:         #807eba !default;
 $brand-success:         #d2ffa0 !default;
-$brand-info:            #3498DB !default;
-$brand-warning:         #F39C12 !default;
-$brand-danger:          #E74C3C !default;
+$brand-info:            rgb(200, 235, 239) !default;
+$brand-warning:         rgb(255, 201, 113) !default;
+$brand-danger:          rgb(255, 133, 133) !default;
 
 
 //== Scaffolding
@@ -27,7 +27,7 @@ $brand-danger:          #E74C3C !default;
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-$body-bg:               #181818 !default;
+$body-bg:               #252525 !default;
 //** Global text color on `<body>`.
 $text-color:            #fff !default;
 
@@ -43,7 +43,7 @@ $link-hover-decoration: underline !default;
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif:  "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-sans-serif:  "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
@@ -60,6 +60,8 @@ $font-size-h4:            ceil(($font-size-base * 1.25)) !default; // ~18px
 $font-size-h5:            $font-size-base !default;
 $font-size-h6:            ceil(($font-size-base * 0.85)) !default; // ~12px
 
+$font-default-weight:     200 !default;
+
 //** Unit-less `line-height` for use in components like buttons.
 $line-height-base:        1.428571429 !default; // 20/14
 //** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
@@ -67,7 +69,7 @@ $line-height-computed:    floor(($font-size-base * $line-height-base)) !default;
 
 //** By default, this inherits from the `<body>`.
 $headings-font-family:    $font-family-base !default;
-$headings-font-weight:    400 !default;
+$headings-font-weight:    $font-default-weight !default;
 $headings-line-height:    1.1 !default;
 $headings-color:          inherit !default;
 
@@ -143,36 +145,36 @@ $table-border-color:            $gray !default;
 //
 //## For each of Bootstrap's buttons, define text, background and border color.
 
-$btn-font-weight:                normal !default;
+$btn-font-weight:                200 !default;
 
 $btn-default-color:              $text-color !default;
-$btn-default-bg:                 lighten(saturate($body-bg, 10%), 50%) !default;
-$btn-default-border:             $btn-default-bg !default;
+$btn-default-bg:                 $gray-darker !default;
+$btn-default-border:             $text-color !default;
 
-$btn-primary-color:              #fff !default;
-$btn-primary-bg:                 $brand-primary !default;
-$btn-primary-border:             $btn-primary-bg !default;
+$btn-primary-color:              $brand-primary !default;
+$btn-primary-bg:                 $gray-darker !default;
+$btn-primary-border:             $btn-primary-color !default;
 
-$btn-success-color:              $gray-darker !default;
-$btn-success-bg:                 $brand-success !default;
-$btn-success-border:             $btn-success-bg !default;
+$btn-success-color:              $brand-success !default;
+$btn-success-bg:                 $gray-darker !default;
+$btn-success-border:             $btn-success-color !default;
 
-$btn-info-color:                 $btn-success-color !default;
-$btn-info-bg:                    $brand-info !default;
-$btn-info-border:                $btn-info-bg !default;
+$btn-info-color:                 $brand-info !default;
+$btn-info-bg:                    $gray-darker !default;
+$btn-info-border:                $btn-info-color !default;
 
-$btn-warning-color:              $btn-success-color !default;
-$btn-warning-bg:                 $brand-warning !default;
-$btn-warning-border:             $btn-warning-bg !default;
+$btn-warning-color:              $brand-warning !default;
+$btn-warning-bg:                 $gray-darker !default;
+$btn-warning-border:             $btn-warning-color !default;
 
-$btn-danger-color:               $btn-success-color !default;
-$btn-danger-bg:                  $brand-danger !default;
-$btn-danger-border:              $btn-danger-bg !default;
+$btn-danger-color:               $brand-danger !default;
+$btn-danger-bg:                  $gray-darker !default;
+$btn-danger-border:              $btn-danger-color !default;
 
 $btn-link-disabled-color:        $gray-light !default;
 
 // Allows for customizing button radius independently from global border radius
-$btn-border-radius-base:         $border-radius-base !default;
+$btn-border-radius-base:         $border-radius-small !default;
 $btn-border-radius-large:        $border-radius-large !default;
 $btn-border-radius-small:        $border-radius-small !default;
 
@@ -194,7 +196,7 @@ $input-border:                   #f1f1f1 !default;
 // TODO: Rename `$input-border-radius` to `$input-border-radius-base` in v4
 //** Default `.form-control` border radius
 // This has no effect on `<select>`s in some browsers, due to the limited stylability of `<select>`s in CSS.
-$input-border-radius:            $border-radius-base !default;
+$input-border-radius:            $border-radius-small !default;
 //** Large `.form-control` border radius
 $input-border-radius-large:      $border-radius-large !default;
 //** Small `.form-control` border radius
@@ -225,7 +227,7 @@ $input-group-addon-bg:           $input-border !default;
 $input-group-addon-border-color: transparent !default;
 
 //** Disabled cursor for form controls and buttons.
-$cursor-disabled:                not-allowed !default;
+$cursor-disabled:                default !default;
 
 
 //== Dropdowns
@@ -288,7 +290,7 @@ $grid-float-breakpoint: 0px;
 
 // Extra small screen / phone
 //** Deprecated `$screen-xs` as of v3.0.1
-$screen-xs:                  480px !default;
+$screen-xs:                  384px !default;
 //** Deprecated `$screen-xs-min` as of v3.2.0
 $screen-xs-min:              $screen-xs !default;
 //** Deprecated `$screen-phone` as of v3.0.1
@@ -296,21 +298,21 @@ $screen-phone:               $screen-xs-min !default;
 
 // Small screen / tablet
 //** Deprecated `$screen-sm` as of v3.0.1
-$screen-sm:                  768px !default;
+$screen-sm:                  448px !default;
 $screen-sm-min:              $screen-sm !default;
 //** Deprecated `$screen-tablet` as of v3.0.1
 $screen-tablet:              $screen-sm-min !default;
 
 // Medium screen / desktop
 //** Deprecated `$screen-md` as of v3.0.1
-$screen-md:                  992px !default;
+$screen-md:                  640px !default;
 $screen-md-min:              $screen-md !default;
 //** Deprecated `$screen-desktop` as of v3.0.1
 $screen-desktop:             $screen-md-min !default;
 
 // Large screen / wide desktop
 //** Deprecated `$screen-lg` as of v3.0.1
-$screen-lg:                  1200px !default;
+$screen-lg:                  1024px !default;
 $screen-lg-min:              $screen-lg !default;
 //** Deprecated `$screen-lg-desktop` as of v3.0.1
 $screen-lg-desktop:          $screen-lg-min !default;
@@ -706,7 +708,7 @@ $list-group-link-heading-color: darken($link-color, 5%) !default;
 //
 //##
 
-$panel-bg:                    lighten($body-bg, 10%) !default;
+$panel-bg:                    $gray-dark !default;
 $panel-body-padding:          15px !default;
 $panel-heading-padding:       10px 15px !default;
 $panel-footer-padding:        $panel-heading-padding !default;
@@ -876,6 +878,14 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+body, label {
+    font-weight: $font-default-weight;
+}
+
+.btn {
+    border-width: 2px;
+}
 
 
 .navbar {

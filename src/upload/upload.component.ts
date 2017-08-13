@@ -39,7 +39,7 @@ export class UploadComponent implements OnInit {
             if (output.file.size > Constants.MAX_File_size()) {
                 // TODO Make this actually reject the file
                 console.warn("Your file is too large, noooo");
-                return;
+                // return;
             }
             this._uploadService.addUpload(output.file);
 

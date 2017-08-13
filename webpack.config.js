@@ -45,7 +45,8 @@ module.exports = new webpackConfig().merge({
             name: ['app', 'vendor', 'polyfills']
         }),
         new ExtractTextPlugin('css/style.css', {
-            allChunks: true
+            allChunks: true,
+            ignoreOrder: true
         }),
         new OptimizeCssAssetsPlugin({
             assetNameRegExp: /\.css$/g,

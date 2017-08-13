@@ -1,7 +1,15 @@
-<div class="input-group" title={{sharingOption.description}}>
-    <span class="input-group-addon">{{sharingOption.name}}</span>
-    <input #inputTarget readonly selectAll [selectOnMouseEnter]="false" class="quick-share-input form-control readonly-enabled" type="text" value="{{link}}">
-    <span class="input-group-addon">
-        <button class="btn btn-primary btn-xs" tabindex="-1" type="button" [ngxClipboard]="inputTarget">Copy</button>
-    </span>
+<div class="quick-share links-{{sharingOption.priority}}" [ngClass]="{'active':focus}" title="{{sharingOption.description}}">
+  <label>
+    <div class="quick-share-title">
+        <span class="glyphicon glyphicon-{{sharingOption.glyphicon}}"></span>
+        {{sharingOption.name}}
+    </div>
+    <div class="quick-share-input-container">
+        <div class="input-wrapper">
+            <input #inputTarget readonly selectAll (focus)="onFocus()" (focusout)="onBlur()" [selectOnMouseEnter]="false" class="quick-share-input form-control readonly-enabled" type="text" value="{{link}}">
+        </div>
+        <button *ngIf="showCopyButton" class="btn btn-success btn-sm" tabindex="-1" type="button" [ngxClipboard]="inputTarget">Copy</button>
+    </div>
+    
+  </label>
 </div>

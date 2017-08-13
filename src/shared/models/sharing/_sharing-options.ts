@@ -8,19 +8,29 @@ export interface SharingOptionInterface {
     getLink(url: string): string;
 }
 
+export enum SharingPriority {
+    Primary = 1,
+    Secondary,
+    Tertiary
+}
+
 export class SharingOption {
+    
     name: string;
     description: string;
     enabled: boolean;
     order: number;
-    imageUrl: string;
+    priority: SharingPriority;
+    glyphicon: string;
     strategyId: string;
     strategy: SharingOptionInterface;
 
-    constructor(name: string, description: string, enabled: boolean, order: number, imageUrl: string, strategyId: string) {
+    constructor(name: string, description: string, enabled: boolean, order: number, priority: SharingPriority, strategyId: string, glyphicon: string) {
         this.name = name;
         this.description = description;
+        this.glyphicon = glyphicon;
         this.enabled = enabled;
+        this.priority = priority;
         this.order = order;
         this.strategy = this.strategyForId(strategyId);
     }

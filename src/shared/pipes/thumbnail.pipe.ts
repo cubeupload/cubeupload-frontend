@@ -14,14 +14,14 @@ export class ThumbnailPipe implements PipeTransform {
                     var image = new Image();
                     image.onload = function () {
                         var canvas = document.createElement("canvas");
-                        if(image.height > size) {
-                            image.width *= size / image.height;
-                            image.height = size;
-                        }
-                        // if (image.width > size) {
-                        //     image.height *= size / image.width;
-                        //     image.width = size;
+                        // if(image.height > size) {
+                        //     image.width *= size / image.height;
+                        //     image.height = size;
                         // }
+                        if (image.width > size) {
+                            image.height *= size / image.width;
+                            image.width = size;
+                        }
                         var ctx = canvas.getContext("2d");
                         ctx.clearRect(0, 0, canvas.width, canvas.height);
                         canvas.width = image.width;

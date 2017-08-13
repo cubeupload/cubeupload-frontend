@@ -10,7 +10,9 @@ import { CUUserPreferences } from '../../../shared/models/cu-user-preferences.cl
 export class DirectShareComponent implements OnInit {
     @Input() url: string;
     @Input() sharingOption: SharingOption;
+    @Input() showCopyButton: boolean;
     link: string;
+    focus: boolean;
 
     constructor() { }
 
@@ -20,5 +22,13 @@ export class DirectShareComponent implements OnInit {
 
     getLink(): void {
         this.link = this.sharingOption.strategy.getLink(this.url);
+    }
+
+    onFocus(): void {
+        this.focus = true;
+    }
+
+    onBlur(): void {
+        this.focus = false;
     }
 }

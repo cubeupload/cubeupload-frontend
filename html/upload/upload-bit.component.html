@@ -1,14 +1,15 @@
 <div class="panel panel-default upload-bit">
-    <div class="panel-heading">
-        <div>{{upload.name}}</div>
-    </div>
-    <progress-bit [progress]="upload.progress.data.percentage"></progress-bit>
     <div class="panel-body thumb-container">
-        <a [routerLink]="['/image', upload.id]">
-            <img class="thumb-container-image" src="{{upload.nativeFile | thumbnail | async}}" onerror="this.src='./resources/icon_alt.png'" alt="{{upload.name}}">
+        <a tabindex="-1" class="upload-bit-image" [routerLink]="['/image', upload.id]" [ngStyle]="{'background-image': 'url(' + (upload.nativeFile | thumbnail | async) + ')'}">
+            <!-- <img class="thumb-container-image" src="{{upload.nativeFile | thumbnail | async}}" onerror="this.src='./resources/icon_alt.png'" alt="{{upload.name}}"> -->
+            <progress-bit [progress]="upload.progress.data.percentage" *ngIf="upload.progress.data.percentage !== 100"></progress-bit>
         </a>
     </div>
-    <div class="panel-footer" *ngIf="upload.progress.data.percentage === 100">
-        <quick-share *ngFor="let sharingOption of sharingOptions" [url]="upload.imageUrl||'81fsG1.png'" [sharingOption]="sharingOption"></quick-share>
+    <div class="panel-heading">
+        {{upload.name}}
     </div>
+    <div class="panel-body upload-bit-links">
+        <quick-share *ngFor="let sharingOption of primarySharingOptions" [url]="upload.imageUrl||'81fsG1.png'" [sharingOption]="sharingOption" [showCopyButton]="true"></quick-share>
+        <quick-share class="links-secondary links-no-gradient" *ngFor="let sharingOption of secondarySharingOptions" [url]="upload.imageUrl||'81fsG1.png'" [sharingOption]="sharingOption" [showCopyButton]="false"></quick-share>
+    </div>    
 </div>

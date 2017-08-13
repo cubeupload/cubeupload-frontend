@@ -16,7 +16,7 @@ export class PrefsService {
         return this._http.get(Constants.API_Preferences_Get()).map(response => {
             this.userPreferences = response.json();
             this.userPreferences.sharingOptions = this.userPreferences.sharingOptions.map(option => {
-                var op = new SharingOption(option.name, option.description, option.enabled, option.order, option.imageUrl, option.strategyId);
+                var op = new SharingOption(option.name, option.description, option.enabled, option.order, option.priority, option.strategyId, option.glyphicon);
                 return op;
             })
             return this.userPreferences;

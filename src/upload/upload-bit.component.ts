@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { PrefsService } from './../shared/services/prefs.service';
 import { CUUserPreferences } from './../shared/models/cu-user-preferences.class';
-import { SharingOption, SharingOptionInterface, DirectShare, SharingPage } from './../shared/models/sharing/_sharing-options';
+import { SharingOption, SharingOptionInterface, DirectShare, SharingPage, SharingPriority } from './../shared/models/sharing/_sharing-options';
 
 @Component({
     selector: 'upload-bit',
@@ -9,7 +9,8 @@ import { SharingOption, SharingOptionInterface, DirectShare, SharingPage } from 
 })
 export class UploadBitComponent implements OnInit {
     @Input() upload: any; // Add Type
-    sharingOptions: SharingOption[];
+    primarySharingOptions: SharingOption[];
+    secondarySharingOptions: SharingOption[];
 
     constructor(private _prefs: PrefsService) { }
 
@@ -20,7 +21,8 @@ export class UploadBitComponent implements OnInit {
     getSharingOptions(): void {
         this._prefs.getPreferences()
             .subscribe(response => {
-                return this.sharingOptions = response.sharingOptions
+                this.primarySharingOptions = response.sharingOptions.filter(option => option.priority === SharingPriority.Primary)
+                this.secondarySharingOptions = response.sharingOptions.filter(option => option.priority === SharingPriority.Secondary)
             });
     }
 

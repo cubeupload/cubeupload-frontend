@@ -5,7 +5,7 @@ export class Constants {
     }
 
     public static get API_Base(): string {
-        return `${process.env.API_URL}/${this.API_Version}`;
+        return `${process.env.API_URL}`;
     }
 
     public static get API_Version(): number {
@@ -29,7 +29,7 @@ export class Constants {
     }
 
     public static API_Upload_Guest(): string {
-        return `${this.API_Base}/upload`;
+        return `${this.API_Base}/upload/guest`;
     }
 
     public static API_Albums_Get(): string {
