@@ -44,7 +44,7 @@ $quickShareSpace-lg: 6px;
   &.links-2 {
     font-size: 0.8em;
     opacity: 0.5;
-    &:hover {
+    &:hover, &.active {
       opacity: 1.0;
     }
     input {

@@ -3,7 +3,7 @@ import { Directive, OnInit, Input, ElementRef, HostListener } from '@angular/cor
 @Directive({
     selector: 'input[selectAll][selectOnMouseEnter]'
 })
-export class SelectAllDirective implements OnInit {
+export class SelectAllDirective {
     @Input() selectOnMouseEnter: boolean = false;
 
     constructor(private _element: ElementRef) { }
@@ -22,15 +22,12 @@ export class SelectAllDirective implements OnInit {
     onClick(element) {
         this.selectElementText(element);
     }
+    
 
-    @HostListener('mouseenter', ['$event.target']) 
+    @HostListener('mouseenter', ['$event.target'])
     onMouseEnter(element) {
         if(this.selectOnMouseEnter) {
             this.selectElementText(element);
         }
-    }
-
-    ngOnInit() {
-        //this._element.
     }
 }
